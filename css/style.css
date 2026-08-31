@@ -1,0 +1,633 @@
+/* =====================================
+   BASIC
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff8f6;
+    color: #333;
+}
+
+
+/* =====================================
+   LOGIN PAGE
+===================================== */
+
+.login-page {
+    min-height: 100vh;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* LEFT */
+
+.login-left {
+    width: 45%;
+    background: linear-gradient(
+        135deg,
+        #ef8068,
+        #f5a08d
+    );
+
+    color: white;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-logo {
+    position: absolute;
+    top: 35px;
+    left: 45px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.pet-welcome {
+    text-align: center;
+}
+
+.big-pet {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.pet-welcome h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.pet-welcome p {
+    font-size: 18px;
+}
+
+.paw-message {
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+
+/* LOGIN BOX */
+
+.login-box {
+    width: 55%;
+    padding: 60px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+.login-title {
+    margin-bottom: 30px;
+}
+
+.login-paw {
+    font-size: 35px;
+}
+
+.login-title h2 {
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+.login-title p {
+    color: #777;
+    font-size: 17px;
+}
+
+
+/* INPUT */
+
+.login-box label {
+    display: block;
+    font-weight: bold;
+    margin: 17px 0 8px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    padding: 0 15px;
+
+    background: #fff;
+}
+
+.input-box span {
+    margin-right: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 15px 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+
+/* LOGIN BUTTON */
+
+.paw-login-button {
+    width: 100%;
+    border: none;
+
+    margin-top: 25px;
+    padding: 16px;
+
+    border-radius: 12px;
+
+    background: #e66f58;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.paw-login-button:hover {
+    background: #d85d47;
+}
+
+
+.back-home {
+    text-align: center;
+    margin-top: 22px;
+
+    color: #d76650;
+    text-decoration: none;
+}
+
+
+/* =====================================
+   WELCOME DASHBOARD
+===================================== */
+
+.dashboard-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7f3,
+            #ffe5dd
+        );
+}
+
+.welcome-box {
+    width: 650px;
+    text-align: center;
+
+    background: white;
+
+    padding: 60px 50px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.08);
+}
+
+.welcome-pet {
+    font-size: 75px;
+}
+
+.small-title {
+    color: #d96b55;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.welcome-box h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.welcome-box h1 span {
+    color: #e26f58;
+}
+
+.welcome-text {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.get-started-btn {
+    margin-top: 30px;
+
+    border: none;
+
+    padding: 17px 35px;
+
+    border-radius: 30px;
+
+    background: #e8735b;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   PET DETAILS
+===================================== */
+
+.pet-details-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.pet-form-box {
+    width: 600px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.08);
+}
+
+.pet-icon {
+    text-align: center;
+    font-size: 70px;
+}
+
+.pet-form-box h1 {
+    text-align: center;
+    font-size: 38px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin: 10px 0 25px;
+}
+
+.pet-form-box label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 7px;
+}
+
+.pet-form-box input,
+.pet-form-box select,
+.info-card input,
+.info-card textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.save-pet-btn {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #e8735b;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   MAIN PAWSENSE DASHBOARD
+===================================== */
+
+.main-dashboard {
+    min-height: 100vh;
+}
+
+.main-nav {
+    height: 75px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 7%;
+
+    background: white;
+
+    box-shadow:
+        0 3px 15px rgba(0,0,0,0.06);
+}
+
+.logo {
+    color: #d96b55;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logout-btn {
+    border: none;
+
+    background: #fff0ec;
+
+    color: #d65f49;
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.dashboard-heading {
+    text-align: center;
+
+    padding: 55px 20px 25px;
+}
+
+.dashboard-heading p {
+    color: #d96b55;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.dashboard-heading h1 {
+    font-size: 42px;
+    margin: 10px;
+}
+
+.dashboard-heading h2 {
+    color: #666;
+}
+
+
+/* PET CARD */
+
+.pet-card {
+    width: 85%;
+    max-width: 900px;
+
+    margin: 20px auto 40px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.06);
+}
+
+.pet-card-icon {
+    font-size: 55px;
+}
+
+
+/* =====================================
+   CATEGORY CARDS
+===================================== */
+
+.category-container {
+    width: 85%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    padding-bottom: 60px;
+}
+
+.category-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.06);
+
+    transition: 0.25s;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.10);
+}
+
+.category-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.category-card h2 {
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: #777;
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   CATEGORY PAGES
+===================================== */
+
+.category-page {
+    width: 85%;
+    max-width: 900px;
+
+    margin: 60px auto;
+
+    text-align: center;
+}
+
+.category-big-icon {
+    font-size: 70px;
+}
+
+.category-page h1 {
+    font-size: 42px;
+    margin: 10px;
+}
+
+.category-page > p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.info-card,
+.doctor-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.06);
+
+    text-align: left;
+}
+
+.info-card h2,
+.doctor-card h2 {
+    margin-bottom: 20px;
+}
+
+.info-card input,
+.info-card textarea {
+    margin-bottom: 15px;
+}
+
+
+/* =====================================
+   SHOP
+===================================== */
+
+.shop-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.shop-card {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.06);
+
+    font-size: 45px;
+}
+
+.shop-card h2 {
+    font-size: 22px;
+    margin: 10px;
+}
+
+.shop-card p {
+    font-size: 15px;
+    color: #777;
+}
+
+
+/* =====================================
+   BACK LINK
+===================================== */
+
+.back-link {
+    color: #d96b55;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 800px) {
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-left,
+    .login-box {
+        width: 100%;
+    }
+
+    .login-left {
+        min-height: 350px;
+    }
+
+    .login-logo {
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .category-container {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

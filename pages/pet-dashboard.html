@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Pet Care</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body class="main-dashboard">
+
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <button onclick="logoutUser()" class="logout-btn">
+            Logout
+        </button>
+
+    </nav>
+
+
+    <section class="dashboard-heading">
+
+        <p>PAWSENSE CARE 🐾</p>
+
+        <h1>
+            Everything Your Pet Needs
+        </h1>
+
+        <h2>
+            Welcome, <span id="dashboardUser">Pet Owner</span>! 🐶
+        </h2>
+
+    </section>
+
+
+    <!-- PET CARD -->
+
+    <div class="pet-card">
+
+        <div class="pet-card-icon">
+            🐶
+        </div>
+
+        <div>
+
+            <h2 id="displayPetName">
+                Your Pet
+            </h2>
+
+            <p id="displayPetInfo">
+                Pet information
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="category-container">
+
+
+        <a href="health.html" class="category-card">
+
+            <div class="category-icon">
+                ❤️
+            </div>
+
+            <h2>Health</h2>
+
+            <p>
+                Track your pet's health information
+            </p>
+
+        </a>
+
+
+        <a href="vaccination.html" class="category-card">
+
+            <div class="category-icon">
+                💉
+            </div>
+
+            <h2>Vaccination</h2>
+
+            <p>
+                Manage vaccination dates and reminders
+            </p>
+
+        </a>
+
+
+        <a href="medical-reports.html" class="category-card">
+
+            <div class="category-icon">
+                🏥
+            </div>
+
+            <h2>Medical Reports</h2>
+
+            <p>
+                Store and manage medical information
+            </p>
+
+        </a>
+
+
+        <a href="medicines.html" class="category-card">
+
+            <div class="category-icon">
+                💊
+            </div>
+
+            <h2>Medicines</h2>
+
+            <p>
+                Keep track of your pet's medicines
+            </p>
+
+        </a>
+
+
+        <a href="doctors.html" class="category-card">
+
+            <div class="category-icon">
+                🩺
+            </div>
+
+            <h2>Veterinary Doctors</h2>
+
+            <p>
+                Find veterinary care for your pet
+            </p>
+
+        </a>
+
+
+        <a href="store.html" class="category-card">
+
+            <div class="category-icon">
+                🛍️
+            </div>
+
+            <h2>Pet Shop</h2>
+
+            <p>
+                Explore food, toys, accessories and more
+            </p>
+
+        </a>
+
+
+    </section>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

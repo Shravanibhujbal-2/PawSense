@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Login</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-container">
+
+        <!-- LEFT SIDE -->
+        <div class="login-left">
+
+            <div class="login-logo">
+                🐾 PawSense
+            </div>
+
+            <div class="pet-welcome">
+
+                <div class="big-pet">
+                    🐶
+                </div>
+
+                <h1>Hey there! 👋</h1>
+
+                <p>Your furry friend is waiting for you!</p>
+
+                <div class="paw-message">
+                    🐾 Let's take care of them together!
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+        <div class="login-box">
+
+            <div class="login-title">
+
+                <div class="login-paw">
+                    🐾
+                </div>
+
+                <h2>Welcome Back!</h2>
+
+                <p>Tell us who you are</p>
+
+            </div>
+
+
+            <form onsubmit="loginUser(event)">
+
+                <label>Username</label>
+
+                <div class="input-box">
+                    <span>👤</span>
+
+                    <input
+                        type="text"
+                        id="loginUsername"
+                        placeholder="What should we call you?"
+                        required
+                    >
+                </div>
+
+
+                <label>Email Address</label>
+
+                <div class="input-box">
+                    <span>📧</span>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+
+                <label>Password</label>
+
+                <div class="input-box">
+                    <span>🔒</span>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+
+                <button type="submit" class="paw-login-button">
+                    🐾 Enter PawSense →
+                </button>
+
+            </form>
+
+
+            <a href="../index.html" class="back-home">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
