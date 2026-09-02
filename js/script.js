@@ -1,24 +1,27 @@
 // ======================================
-// PawSense - LOGIN
+// PawSense - REGISTER
 // ======================================
 
-function loginUser(event) {
+function registerUser(event) {
 
     event.preventDefault();
 
-    const username =
-        document.getElementById("loginUsername").value.trim();
+    const name =
+        document.getElementById("registerName").value.trim();
 
     const email =
-        document.getElementById("loginEmail").value.trim();
+        document.getElementById("registerEmail").value.trim();
 
     const password =
-        document.getElementById("loginPassword").value;
+        document.getElementById("registerPassword").value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword").value;
 
 
-    if (username === "" || email === "" || password === "") {
+    if (password !== confirmPassword) {
 
-        alert("Please fill all details 🐾");
+        alert("Passwords do not match! ❌");
 
         return;
     }
@@ -26,10 +29,8 @@ function loginUser(event) {
 
     const user = {
 
-        username: username,
-
+        name: name,
         email: email,
-
         password: password
 
     };
@@ -47,6 +48,11 @@ function loginUser(event) {
     );
 
 
+    alert(
+        "Account created successfully! Welcome to PawSense! 🐾"
+    );
+
+
     window.location.href = "dashboard.html";
 
 }
@@ -54,7 +60,69 @@ function loginUser(event) {
 
 
 // ======================================
-// SHOW USERNAME
+// PawSense - LOGIN
+// ======================================
+
+function loginUser(event) {
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    const password =
+        document.getElementById("loginPassword").value;
+
+
+    const savedUser =
+        JSON.parse(
+            localStorage.getItem("pawSenseUser")
+        );
+
+
+    if (!savedUser) {
+
+        alert("Please create an account first! 🐾");
+
+        window.location.href = "register.html";
+
+        return;
+    }
+
+
+    if (
+        email === savedUser.email &&
+        password === savedUser.password
+    ) {
+
+        localStorage.setItem(
+            "pawSenseLoggedIn",
+            "true"
+        );
+
+
+        alert(
+            "Welcome to PawSense, " +
+            savedUser.name +
+            "! 🐾"
+        );
+
+
+        window.location.href =
+            "dashboard.html";
+
+    } else {
+
+        alert("Invalid email or password! ❌");
+
+    }
+
+}
+
+
+
+// ======================================
+// GET USER NAME
 // ======================================
 
 function getUserName() {
@@ -67,7 +135,7 @@ function getUserName() {
 
     if (user) {
 
-        return user.username;
+        return user.name;
 
     }
 
@@ -79,116 +147,58 @@ function getUserName() {
 
 
 // ======================================
-// DASHBOARD USERNAME
+// PAGE LOAD
 // ======================================
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const userName =
+            getUserName();
 
 
-    const userName =
-        getUserName();
+        const userElement =
+            document.getElementById("userName");
 
 
-    const userElement =
-        document.getElementById("userName");
+        if (userElement) {
 
-
-    if (userElement) {
-
-        userElement.textContent =
-            userName;
-
-    }
-
-
-    const dashboardUser =
-        document.getElementById("dashboardUser");
-
-
-    if (dashboardUser) {
-
-        dashboardUser.textContent =
-            userName;
-
-    }
-
-
-
-    // ================================
-    // PET INFORMATION
-    // ================================
-
-    const pet =
-        JSON.parse(
-            localStorage.getItem("pawSensePet")
-        );
-
-
-    if (pet) {
-
-
-        const petName =
-            document.getElementById("displayPetName");
-
-
-        const petInfo =
-            document.getElementById("displayPetInfo");
-
-
-        if (petName) {
-
-            petName.textContent =
-                "🐾 " + pet.name;
+            userElement.textContent =
+                userName;
 
         }
 
 
-        if (petInfo) {
+        const dashboardUser =
+            document.getElementById("dashboardUser");
 
-            petInfo.textContent =
-                pet.type +
-                " • " +
-                pet.age +
-                " years • " +
-                pet.gender +
-                " • " +
-                pet.breed;
+
+        if (dashboardUser) {
+
+            dashboardUser.textContent =
+                userName;
 
         }
 
 
-        const healthName =
-            document.getElementById("healthPetName");
+        // Health page
+        loadHealthPets();
 
 
-        const healthInfo =
-            document.getElementById("healthPetInfo");
+        // Health details page
+        if (
+            document.getElementById(
+                "healthDetailsPetName"
+            )
+        ) {
 
-
-        if (healthName) {
-
-            healthName.textContent =
-                "🐾 " + pet.name;
-
-        }
-
-
-        if (healthInfo) {
-
-            healthInfo.textContent =
-                pet.type +
-                " • " +
-                pet.age +
-                " years • " +
-                pet.gender +
-                " • " +
-                pet.breed;
+            loadSelectedPetHealth();
 
         }
 
     }
-
-});
+);
 
 
 
@@ -234,6 +244,21 @@ function savePet(event) {
     };
 
 
+    let pets =
+        JSON.parse(
+            localStorage.getItem("pawSensePets")
+        ) || [];
+
+
+    pets.push(pet);
+
+
+    localStorage.setItem(
+        "pawSensePets",
+        JSON.stringify(pets)
+    );
+
+
     localStorage.setItem(
         "pawSensePet",
         JSON.stringify(pet)
@@ -242,6 +267,94 @@ function savePet(event) {
 
     window.location.href =
         "pet-dashboard.html";
+
+}
+
+
+
+// ======================================
+// RESET PASSWORD
+// ======================================
+
+function resetPassword(event) {
+
+    event.preventDefault();
+
+
+    const email =
+        document.getElementById(
+            "resetEmail"
+        ).value.trim();
+
+
+    const newPassword =
+        document.getElementById(
+            "newPassword"
+        ).value;
+
+
+    const confirmPassword =
+        document.getElementById(
+            "confirmNewPassword"
+        ).value;
+
+
+    const savedUser =
+        JSON.parse(
+            localStorage.getItem("pawSenseUser")
+        );
+
+
+    if (!savedUser) {
+
+        alert(
+            "No account found! Please create an account first. 🐾"
+        );
+
+        window.location.href =
+            "register.html";
+
+        return;
+    }
+
+
+    if (email !== savedUser.email) {
+
+        alert(
+            "Email address does not match! ❌"
+        );
+
+        return;
+    }
+
+
+    if (newPassword !== confirmPassword) {
+
+        alert(
+            "Passwords do not match! ❌"
+        );
+
+        return;
+    }
+
+
+    savedUser.password =
+        newPassword;
+
+
+    localStorage.setItem(
+        "pawSenseUser",
+        JSON.stringify(savedUser)
+    );
+
+
+    alert(
+        "Password reset successfully! 🐾🔐"
+    );
+
+
+    window.location.href =
+        "login.html";
 
 }
 
@@ -258,17 +371,340 @@ function logoutUser() {
     );
 
 
-    localStorage.removeItem(
-        "pawSenseUser"
+    window.location.href =
+        "login.html";
+
+}
+
+
+
+// ======================================
+// GET PET ICON
+// ======================================
+
+function getPetIcon(type) {
+
+    if (type === "Dog")
+        return "🐶";
+
+    if (type === "Cat")
+        return "🐱";
+
+    if (type === "Rabbit")
+        return "🐰";
+
+    if (type === "Bird")
+        return "🐦";
+
+    return "🐾";
+
+}
+
+
+
+// ======================================
+// VIEW PET DETAILS
+// ======================================
+
+function loadPetDetails() {
+
+    const pet =
+        JSON.parse(
+            localStorage.getItem("pawSensePet")
+        );
+
+
+    if (!pet) {
+
+        return;
+
+    }
+
+
+    const petName =
+        document.getElementById("viewPetName");
+
+    const petType =
+        document.getElementById("viewPetType");
+
+    const petAge =
+        document.getElementById("viewPetAge");
+
+    const petGender =
+        document.getElementById("viewPetGender");
+
+    const petBreed =
+        document.getElementById("viewPetBreed");
+
+
+    if (petName)
+        petName.textContent = pet.name;
+
+    if (petType)
+        petType.textContent = pet.type;
+
+    if (petAge)
+        petAge.textContent =
+            pet.age + " years";
+
+    if (petGender)
+        petGender.textContent =
+            pet.gender;
+
+    if (petBreed)
+        petBreed.textContent =
+            pet.breed || "Not specified";
+
+}
+
+
+
+// ======================================
+// ADD ANOTHER PET
+// ======================================
+
+function addAnotherPet() {
+
+    window.location.href =
+        "pet-details.html";
+
+}
+
+
+
+// ======================================
+// SHOW ALL PETS ON HEALTH PAGE
+// ======================================
+
+function loadHealthPets() {
+
+    const pets =
+        JSON.parse(
+            localStorage.getItem("pawSensePets")
+        ) || [];
+
+
+    const container =
+        document.getElementById(
+            "healthPetsContainer"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    pets.forEach(
+        function (pet, index) {
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "health-pet-card";
+
+
+            card.innerHTML = `
+
+                <div class="health-pet-icon">
+                    ${getPetIcon(pet.type)}
+                </div>
+
+                <h2>${pet.name}</h2>
+
+                <button
+                    class="view-health-btn"
+                    onclick="viewHealthDetails(${index})">
+
+                    View Health Details →
+
+                </button>
+
+            `;
+
+
+            container.appendChild(card);
+
+        }
     );
 
+}
 
-    localStorage.removeItem(
-        "pawSensePet"
+
+
+// ======================================
+// OPEN SELECTED PET HEALTH
+// ======================================
+
+function viewHealthDetails(index) {
+
+    localStorage.setItem(
+        "selectedPetIndex",
+        index
     );
 
 
     window.location.href =
-        "login.html";
+        "health-details.html";
 
+}
+
+
+
+// ======================================
+// LOAD SELECTED PET HEALTH DETAILS
+// ======================================
+
+function loadSelectedPetHealth() {
+
+    const pets =
+        JSON.parse(
+            localStorage.getItem("pawSensePets")
+        ) || [];
+
+
+    const selectedIndex =
+        localStorage.getItem(
+            "selectedPetIndex"
+        );
+
+
+    if (
+        selectedIndex === null ||
+        !pets[selectedIndex]
+    ) {
+
+        return;
+
+    }
+
+
+    const pet =
+        pets[selectedIndex];
+
+
+    const petName =
+        document.getElementById(
+            "healthDetailsPetName"
+        );
+
+
+    const petInfo =
+        document.getElementById(
+            "healthDetailsPetInfo"
+        );
+
+
+    if (petName) {
+
+        petName.textContent =
+            pet.name + "'s Health";
+
+    }
+
+
+    if (petInfo) {
+
+        petInfo.textContent =
+            pet.type +
+            " • " +
+            pet.age +
+            " years • " +
+            pet.gender;
+
+    }
+
+}
+
+
+
+// ======================================
+// VIEW PET DETAILS PAGE LOAD
+// ======================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        if (
+            document.getElementById(
+                "viewPetName"
+            )
+        ) {
+
+            loadPetDetails();
+
+        }
+
+    }
+);
+// ======================================
+// SAVE HEALTH DETAILS
+// ======================================
+
+function saveHealth(event) {
+
+    event.preventDefault();
+
+    const pets =
+        JSON.parse(
+            localStorage.getItem("pawSensePets")
+        ) || [];
+
+    const selectedIndex =
+        localStorage.getItem("selectedPetIndex");
+
+    if (
+        selectedIndex === null ||
+        !pets[selectedIndex]
+    ) {
+        alert("Pet not found! ❌");
+        return;
+    }
+
+    const health = {
+
+        weight:
+            document.getElementById("petWeight").value,
+
+        height:
+            document.getElementById("petHeight").value,
+
+        temperature:
+            document.getElementById("petTemperature").value,
+
+        status:
+            document.getElementById("healthStatus").value,
+
+        diet:
+            document.getElementById("petDiet").value.trim(),
+
+        allergies:
+            document.getElementById("petAllergies").value.trim(),
+
+        activity:
+            document.getElementById("petActivity").value.trim(),
+
+        symptoms:
+            document.getElementById("petSymptoms").value.trim()
+
+    };
+
+    pets[selectedIndex].health = health;
+
+    localStorage.setItem(
+        "pawSensePets",
+        JSON.stringify(pets)
+    );
+
+    alert("Health details saved successfully! ❤️🐾");
+
+    window.location.href = "health.html";
 }

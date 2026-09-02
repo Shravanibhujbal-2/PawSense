@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Pet Details</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body class="pet-view-page">
+
+
+    <!-- NAVBAR -->
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="pet-dashboard.html"
+           class="back-dashboard">
+            ← Dashboard
+        </a>
+
+    </nav>
+
+
+    <!-- PAGE HEADING -->
+
+    <section class="pet-view-heading">
+
+        <p>🐾 PAWSENSE CARE</p>
+
+        <h1>Pet Details</h1>
+
+        <span>
+            Here's everything about your pet.
+        </span>
+
+    </section>
+
+
+    <!-- PET DETAILS CARD -->
+
+    <section class="pet-details-card">
+
+
+        <div class="pet-view-icon">
+            🐶
+        </div>
+
+
+        <h2 id="viewPetName">
+            Your Pet
+        </h2>
+
+
+        <p class="pet-type"
+           id="viewPetType">
+            Pet Type
+        </p>
+
+
+        <div class="pet-info-grid">
+
+
+            <div class="pet-info-box">
+
+                <span>🎂</span>
+
+                <p>Age</p>
+
+                <h3 id="viewPetAge">
+                    -
+                </h3>
+
+            </div>
+
+
+            <div class="pet-info-box">
+
+                <span>⚧️</span>
+
+                <p>Gender</p>
+
+                <h3 id="viewPetGender">
+                    -
+                </h3>
+
+            </div>
+
+
+            <div class="pet-info-box">
+
+                <span>🐾</span>
+
+                <p>Breed</p>
+
+                <h3 id="viewPetBreed">
+                    -
+                </h3>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ADD ANOTHER PET -->
+
+        <button
+            class="add-another-pet-btn"
+            onclick="addAnotherPet()">
+
+            🐾 Add Another Pet
+
+        </button>
+
+
+    </section>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,119 +1,497 @@
-/* =====================================
-   BASIC
-===================================== */
+/* =========================
+   PAWSENSE - BASIC STYLE
+   ========================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #fff8f6;
+    font-family: Arial, sans-serif;
+    background: #fffaf7;
     color: #333;
 }
 
 
-/* =====================================
-   LOGIN PAGE
-===================================== */
+/* =========================
+   NAVBAR
+   ========================= */
 
-.login-page {
-    min-height: 100vh;
-}
-
-.login-container {
-    min-height: 100vh;
+.navbar {
+    height: 75px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: white;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-
-/* LEFT */
-
-.login-left {
-    width: 45%;
-    background: linear-gradient(
-        135deg,
-        #ef8068,
-        #f5a08d
-    );
-
-    color: white;
-    padding: 45px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.login-logo {
-    position: absolute;
-    top: 35px;
-    left: 45px;
-    font-size: 27px;
+.logo {
+    font-size: 25px;
     font-weight: bold;
 }
 
-.pet-welcome {
-    text-align: center;
-}
-
-.big-pet {
-    font-size: 100px;
-    margin-bottom: 20px;
-}
-
-.pet-welcome h1 {
-    font-size: 42px;
-    margin-bottom: 12px;
-}
-
-.pet-welcome p {
-    font-size: 18px;
-}
-
-.paw-message {
-    margin-top: 25px;
-    font-size: 16px;
-}
-
-
-/* LOGIN BOX */
-
-.login-box {
-    width: 55%;
-    padding: 60px 9%;
+.nav-links {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: white;
+    align-items: center;
+    gap: 28px;
 }
 
-.login-title {
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #d87955;
+}
+
+.login-btn {
+    padding: 11px 22px;
+    border-radius: 25px;
+    background: #d87955;
+    color: white !important;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 70px 10%;
+}
+
+.hero-text {
+    width: 55%;
+}
+
+.small-heading {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero-description {
+    max-width: 550px;
+    line-height: 1.7;
+    color: #666;
+    font-size: 17px;
     margin-bottom: 30px;
 }
 
-.login-paw {
-    font-size: 35px;
+.hero-buttons {
+    display: flex;
+    gap: 15px;
 }
 
-.login-title h2 {
+.primary-btn,
+.secondary-btn {
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.primary-btn {
+    background: #d87955;
+    color: white;
+}
+
+.secondary-btn {
+    border: 1px solid #d87955;
+    color: #d87955;
+}
+
+.hero-pet {
+    position: relative;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.pet-circle {
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background: #f6d7c7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 150px;
+}
+
+.floating-paw {
+    position: absolute;
+    font-size: 30px;
+}
+
+.paw1 {
+    top: 20px;
+    right: 40px;
+}
+
+.paw2 {
+    bottom: 30px;
+    left: 20px;
+}
+
+.paw3 {
+    top: 100px;
+    left: 10px;
+}
+
+
+/* =========================
+   SERVICES
+   ========================= */
+
+.services {
+    padding: 80px 8%;
+    background: white;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.section-heading h2 {
     font-size: 38px;
+    margin: 12px 0;
+}
+
+.section-heading span {
+    color: #777;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background: #fffaf7;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+}
+
+.service-icon {
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ABOUT
+   ========================= */
+
+.about {
+    padding: 90px 12%;
+}
+
+.about-content {
+    max-width: 700px;
+}
+
+.about h2 {
+    font-size: 40px;
+    margin: 15px 0 20px;
+}
+
+.about p:last-child {
+    color: #666;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact {
+    text-align: center;
+    padding: 70px 20px;
+    background: #f6d7c7;
+}
+
+.contact h2 {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.contact p {
+    margin-bottom: 25px;
+}
+
+.contact a {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #d87955;
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 25px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #333;
+    color: white;
+}
+
+.footer-logo {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #ddd;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-text,
+    .hero-pet {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .pet-circle {
+        width: 250px;
+        height: 250px;
+        font-size: 110px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   REGISTER PAGE
+   ========================= */
+
+.register-page {
+    min-height: 100vh;
+    background: #fffaf7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container {
+    width: 90%;
+    max-width: 1000px;
+    min-height: 600px;
+
+    display: flex;
+
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* LEFT SIDE */
+
+.register-left {
+    width: 45%;
+
+    background: #f6d7c7;
+
+    padding: 45px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.register-logo {
+    position: absolute;
+
+    top: 35px;
+    left: 40px;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.register-pet {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 100px;
+
+    margin-bottom: 25px;
+}
+
+.register-left h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.register-left p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* REGISTER FORM */
+
+.register-box {
+    width: 55%;
+
+    padding: 50px 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.register-title span {
+    font-size: 30px;
+}
+
+.register-title h2 {
+    font-size: 30px;
     margin: 8px 0;
 }
 
-.login-title p {
+.register-title p {
     color: #777;
-    font-size: 17px;
 }
 
 
-/* INPUT */
+/* INPUTS */
 
-.login-box label {
+.register-box label {
     display: block;
+
+    font-size: 14px;
     font-weight: bold;
-    margin: 17px 0 8px;
+
+    margin-top: 15px;
+    margin-bottom: 7px;
 }
 
 .input-box {
@@ -121,9 +499,10 @@ body {
     align-items: center;
 
     border: 1px solid #ddd;
-    border-radius: 12px;
 
-    padding: 0 15px;
+    border-radius: 10px;
+
+    padding: 0 14px;
 
     background: #fff;
 }
@@ -134,475 +513,388 @@ body {
 
 .input-box input {
     width: 100%;
-    padding: 15px 5px;
+
     border: none;
     outline: none;
-    font-size: 15px;
+
+    padding: 13px 5px;
+
+    font-size: 14px;
 }
 
 
-/* LOGIN BUTTON */
+/* BUTTON */
 
 .paw-login-button {
     width: 100%;
-    border: none;
 
     margin-top: 25px;
-    padding: 16px;
 
-    border-radius: 12px;
+    padding: 14px;
 
-    background: #e66f58;
+    border: none;
+
+    border-radius: 25px;
+
+    background: #d87955;
+
     color: white;
 
-    font-size: 16px;
+    font-size: 15px;
+
     font-weight: bold;
 
     cursor: pointer;
 }
 
 .paw-login-button:hover {
-    background: #d85d47;
+    opacity: 0.9;
 }
 
 
-.back-home {
-    text-align: center;
-    margin-top: 22px;
+/* LINKS */
 
-    color: #d76650;
+.register-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #d87955;
+
+    font-weight: bold;
+
     text-decoration: none;
 }
 
-
-/* =====================================
-   WELCOME DASHBOARD
-===================================== */
-
-.dashboard-page {
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff7f3,
-            #ffe5dd
-        );
-}
-
-.welcome-box {
-    width: 650px;
+.back-home {
     text-align: center;
 
-    background: white;
+    margin-top: 15px;
 
-    padding: 60px 50px;
+    color: #555;
 
-    border-radius: 25px;
+    text-decoration: none;
 
-    box-shadow:
-        0 15px 45px rgba(0,0,0,0.08);
+    font-size: 14px;
 }
 
-.welcome-pet {
-    font-size: 75px;
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .register-container {
+        width: 94%;
+        flex-direction: column;
+    }
+
+    .register-left {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .register-box {
+        width: 100%;
+        padding: 35px 25px;
+    }
+
+    .register-logo {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .register-pet {
+        width: 130px;
+        height: 130px;
+        font-size: 70px;
+    }
+
+    .register-left h1 {
+        font-size: 24px;
+    }
+}
+/* FORGOT PASSWORD */
+
+.forgot-password {
+    text-align: right;
+    margin-top: 8px;
 }
 
-.small-title {
-    color: #d96b55;
-    letter-spacing: 3px;
+.forgot-password a {
+    color: #d87955;
+    text-decoration: none;
+    font-size: 13px;
     font-weight: bold;
-    margin: 15px 0;
 }
 
-.welcome-box h1 {
-    font-size: 42px;
-    margin: 15px 0;
+.forgot-password a:hover {
+    text-decoration: underline;
 }
+/* =========================
+   LOGIN PAGE
+   ========================= */
 
-.welcome-box h1 span {
-    color: #e26f58;
-}
-
-.welcome-text {
-    color: #666;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.get-started-btn {
-    margin-top: 30px;
-
-    border: none;
-
-    padding: 17px 35px;
-
-    border-radius: 30px;
-
-    background: #e8735b;
-    color: white;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-
-/* =====================================
-   PET DETAILS
-===================================== */
-
-.pet-details-page {
+.login-page {
     min-height: 100vh;
-
     display: flex;
-    justify-content: center;
     align-items: center;
-
+    justify-content: center;
+    background: #fffaf7;
     padding: 30px;
 }
 
-.pet-form-box {
-    width: 600px;
+.login-container {
+    width: 900px;
+    max-width: 100%;
+    min-height: 560px;
+
+    display: flex;
 
     background: white;
 
-    padding: 45px;
+    border-radius: 24px;
 
-    border-radius: 25px;
+    overflow: hidden;
 
-    box-shadow:
-        0 15px 45px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
 }
 
-.pet-icon {
+
+/* =========================
+   LEFT SIDE
+   ========================= */
+
+.login-left {
+    width: 45%;
+
+    padding: 40px;
+
+    background: #f6d7c7;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
-    font-size: 70px;
 }
 
-.pet-form-box h1 {
-    text-align: center;
-    font-size: 38px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #777;
-    margin: 10px 0 25px;
-}
-
-.pet-form-box label {
-    display: block;
+.login-logo {
+    font-size: 25px;
     font-weight: bold;
-    margin: 15px 0 7px;
+
+    margin-bottom: 35px;
 }
 
-.pet-form-box input,
-.pet-form-box select,
-.info-card input,
-.info-card textarea {
-    width: 100%;
+.big-pet {
+    font-size: 110px;
 
-    padding: 14px;
+    margin-bottom: 20px;
+}
+
+.login-left h1 {
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.login-left p {
+    color: #666;
+
+    margin-bottom: 18px;
+}
+
+.paw-message {
+    font-size: 14px;
+}
+
+
+/* =========================
+   LOGIN FORM
+   ========================= */
+
+.login-box {
+    width: 55%;
+
+    padding: 55px 65px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.login-title {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.login-title span {
+    font-size: 28px;
+}
+
+.login-title h2 {
+    font-size: 30px;
+
+    margin: 8px 0;
+}
+
+.login-title p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   LOGIN INPUTS
+   ========================= */
+
+.login-box label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+}
+
+.login-box .input-box {
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
 
     border: 1px solid #ddd;
 
     border-radius: 10px;
 
-    outline: none;
+    padding: 0 14px;
 
-    font-size: 15px;
+    background: white;
 }
 
-.save-pet-btn {
+.login-box .input-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding: 10px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+   ========================= */
+
+.login-box .forgot-password {
+    text-align: right;
+
+    margin-top: 9px;
+}
+
+.login-box .forgot-password a {
+    color: #d87955;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.login-box .forgot-password a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+   ========================= */
+
+.login-box .paw-login-button {
     width: 100%;
 
     margin-top: 25px;
 
-    padding: 15px;
+    padding: 14px;
 
     border: none;
 
-    border-radius: 12px;
+    border-radius: 25px;
 
-    background: #e8735b;
+    background: #d87955;
 
     color: white;
 
-    font-weight: bold;
-
-    font-size: 16px;
-
-    cursor: pointer;
-}
-
-
-/* =====================================
-   MAIN PAWSENSE DASHBOARD
-===================================== */
-
-.main-dashboard {
-    min-height: 100vh;
-}
-
-.main-nav {
-    height: 75px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 0 7%;
-
-    background: white;
-
-    box-shadow:
-        0 3px 15px rgba(0,0,0,0.06);
-}
-
-.logo {
-    color: #d96b55;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.logout-btn {
-    border: none;
-
-    background: #fff0ec;
-
-    color: #d65f49;
-
-    padding: 10px 20px;
-
-    border-radius: 20px;
-
-    cursor: pointer;
-}
-
-.dashboard-heading {
-    text-align: center;
-
-    padding: 55px 20px 25px;
-}
-
-.dashboard-heading p {
-    color: #d96b55;
-    letter-spacing: 3px;
-    font-weight: bold;
-}
-
-.dashboard-heading h1 {
-    font-size: 42px;
-    margin: 10px;
-}
-
-.dashboard-heading h2 {
-    color: #666;
-}
-
-
-/* PET CARD */
-
-.pet-card {
-    width: 85%;
-    max-width: 900px;
-
-    margin: 20px auto 40px;
-
-    padding: 25px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-
-    background: white;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.06);
-}
-
-.pet-card-icon {
-    font-size: 55px;
-}
-
-
-/* =====================================
-   CATEGORY CARDS
-===================================== */
-
-.category-container {
-    width: 85%;
-    max-width: 1100px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 22px;
-
-    padding-bottom: 60px;
-}
-
-.category-card {
-    background: white;
-
-    padding: 30px;
-
-    border-radius: 20px;
-
-    text-decoration: none;
-
-    color: #333;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.06);
-
-    transition: 0.25s;
-}
-
-.category-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 15px 30px rgba(0,0,0,0.10);
-}
-
-.category-icon {
-    font-size: 40px;
-
-    margin-bottom: 15px;
-}
-
-.category-card h2 {
-    margin-bottom: 10px;
-}
-
-.category-card p {
-    color: #777;
-    line-height: 1.5;
-}
-
-
-/* =====================================
-   CATEGORY PAGES
-===================================== */
-
-.category-page {
-    width: 85%;
-    max-width: 900px;
-
-    margin: 60px auto;
-
-    text-align: center;
-}
-
-.category-big-icon {
-    font-size: 70px;
-}
-
-.category-page h1 {
-    font-size: 42px;
-    margin: 10px;
-}
-
-.category-page > p {
-    color: #777;
-    margin-bottom: 30px;
-}
-
-.info-card,
-.doctor-card {
-    background: white;
-
-    padding: 30px;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.06);
-
-    text-align: left;
-}
-
-.info-card h2,
-.doctor-card h2 {
-    margin-bottom: 20px;
-}
-
-.info-card input,
-.info-card textarea {
-    margin-bottom: 15px;
-}
-
-
-/* =====================================
-   SHOP
-===================================== */
-
-.shop-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 20px;
-}
-
-.shop-card {
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.06);
-
-    font-size: 45px;
-}
-
-.shop-card h2 {
-    font-size: 22px;
-    margin: 10px;
-}
-
-.shop-card p {
     font-size: 15px;
-    color: #777;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.login-box .paw-login-button:hover {
+    opacity: 0.9;
 }
 
 
-/* =====================================
-   BACK LINK
-===================================== */
+/* =========================
+   LOGIN LINKS
+   ========================= */
 
-.back-link {
-    color: #d96b55;
+.login-box .register-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.login-box .register-text a {
+    color: #d87955;
+
     text-decoration: none;
+
     font-weight: bold;
 }
 
+.login-box .back-home {
+    text-align: center;
 
-/* =====================================
-   MOBILE
-===================================== */
+    margin-top: 15px;
 
-@media (max-width: 800px) {
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   LOGIN MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .login-page {
+        padding: 15px;
+    }
 
     .login-container {
         flex-direction: column;
@@ -614,20 +906,1537 @@ body {
     }
 
     .login-left {
-        min-height: 350px;
+        padding: 30px 20px;
     }
 
-    .login-logo {
-        position: static;
-        margin-bottom: 30px;
+    .login-box {
+        padding: 35px 25px;
+    }
+
+    .big-pet {
+        font-size: 75px;
+    }
+}
+/* =========================
+   FORGOT PASSWORD PAGE
+   ========================= */
+
+.forgot-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fffaf7;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.forgot-container {
+    width: 900px;
+    max-width: 100%;
+    min-height: 560px;
+
+    display: flex;
+
+    background: white;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================
+   LEFT SIDE
+   ========================= */
+
+.forgot-left {
+    width: 45%;
+
+    padding: 40px;
+
+    background: #f6d7c7;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.forgot-logo {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 35px;
+}
+
+.forgot-pet {
+    font-size: 110px;
+
+    margin-bottom: 20px;
+}
+
+.forgot-left h1 {
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.forgot-left p {
+    color: #666;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RESET PASSWORD BOX
+   ========================= */
+
+.forgot-box {
+    width: 55%;
+
+    padding: 55px 65px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+.forgot-title {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.forgot-title span {
+    font-size: 28px;
+}
+
+.forgot-title h2 {
+    font-size: 30px;
+
+    margin: 8px 0;
+}
+
+.forgot-title p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   INPUTS
+   ========================= */
+
+.forgot-box label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+}
+
+.forgot-box .input-box {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 0 14px;
+
+    background: white;
+}
+
+.forgot-box .input-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding: 10px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.forgot-box .paw-login-button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #d87955;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.forgot-box .paw-login-button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   LINKS
+   ========================= */
+
+.forgot-box .register-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.forgot-box .register-text a {
+    color: #d87955;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.forgot-box .back-home {
+    text-align: center;
+
+    margin-top: 15px;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .forgot-page {
+        padding: 15px;
+    }
+
+    .forgot-container {
+        flex-direction: column;
+    }
+
+    .forgot-left,
+    .forgot-box {
+        width: 100%;
+    }
+
+    .forgot-left {
+        padding: 30px 20px;
+    }
+
+    .forgot-box {
+        padding: 35px 25px;
+    }
+
+    .forgot-pet {
+        font-size: 75px;
+    }
+}
+/* =========================
+   WELCOME DASHBOARD
+   ========================= */
+
+.dashboard-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fffaf7;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   WELCOME BOX
+   ========================= */
+
+.welcome-box {
+    width: 650px;
+    max-width: 100%;
+
+    background: white;
+
+    padding: 55px 50px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================
+   PET
+   ========================= */
+
+.welcome-pet {
+    width: 150px;
+    height: 150px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background: #f6d7c7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 85px;
+}
+
+
+/* =========================
+   SMALL TITLE
+   ========================= */
+
+.small-title {
+    color: #d87955;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   HEADING
+   ========================= */
+
+.welcome-box h1 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.welcome-box h1 span {
+    color: #d87955;
+}
+
+
+/* =========================
+   DESCRIPTION
+   ========================= */
+
+.welcome-text {
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+.welcome-box > p:not(.small-title):not(.welcome-text) {
+    color: #555;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   GET STARTED BUTTON
+   ========================= */
+
+.get-started-btn {
+    border: none;
+
+    background: #d87955;
+
+    color: white;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.get-started-btn:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .dashboard-page {
+        padding: 20px;
+    }
+
+    .welcome-box {
+        padding: 40px 25px;
+    }
+
+    .welcome-pet {
+        width: 120px;
+        height: 120px;
+
+        font-size: 70px;
+    }
+
+    .welcome-box h1 {
+        font-size: 30px;
+    }
+
+}
+/* =========================
+   PET DETAILS PAGE
+   ========================= */
+
+.pet-details-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fffaf7;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   PET FORM BOX
+   ========================= */
+
+.pet-form-box {
+    width: 600px;
+    max-width: 100%;
+
+    background: white;
+
+    padding: 45px 55px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
+
+    text-align: center;
+}
+
+
+/* =========================
+   PAW ICON
+   ========================= */
+
+.pet-icon {
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #f6d7c7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+.pet-form-box .small-title {
+    color: #d87955;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.pet-form-box h1 {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.pet-form-box .subtitle {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.pet-form-box form {
+    text-align: left;
+}
+
+.pet-form-box label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 16px;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   INPUT + SELECT
+   ========================= */
+
+.pet-form-box input,
+.pet-form-box select {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: white;
+
+    font-size: 14px;
+}
+
+.pet-form-box input:focus,
+.pet-form-box select:focus {
+
+    border-color: #d87955;
+}
+
+
+/* =========================
+   SAVE BUTTON
+   ========================= */
+
+.save-pet-btn {
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #d87955;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.save-pet-btn:hover {
+
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .pet-details-page {
+        padding: 20px;
+    }
+
+    .pet-form-box {
+        padding: 35px 25px;
+    }
+
+    .pet-form-box h1 {
+        font-size: 28px;
+    }
+
+}
+/* =========================
+   PET CARE DASHBOARD
+   ========================= */
+
+.main-dashboard {
+    min-height: 100vh;
+    background: #fffaf7;
+}
+
+
+/* NAVBAR */
+
+.main-nav {
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: white;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.main-nav .logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logout-btn {
+    border: none;
+
+    background: #d87955;
+    color: white;
+
+    padding: 10px 22px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* HEADING */
+
+.dashboard-heading {
+    text-align: center;
+
+    padding: 55px 20px 30px;
+}
+
+.dashboard-heading p {
+    color: #d87955;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.dashboard-heading h1 {
+    font-size: 38px;
+
+    margin: 12px 0;
+}
+
+.dashboard-heading h2 {
+    font-size: 18px;
+
+    font-weight: normal;
+
+    color: #666;
+}
+
+.dashboard-heading h2 span {
+    color: #d87955;
+
+    font-weight: bold;
+}
+
+
+/* PET CARD */
+
+.pet-card {
+    width: 700px;
+    max-width: 90%;
+
+    margin: 10px auto 40px;
+
+    padding: 20px 25px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.pet-card-icon {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: #f6d7c7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+}
+
+.pet-card h2 {
+    margin-bottom: 7px;
+}
+
+.pet-card p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* CATEGORY SECTION */
+
+.category-container {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding-bottom: 60px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* CATEGORY CARD */
+
+.category-card {
+    background: white;
+
+    padding: 28px 22px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+.category-icon {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.category-card h2 {
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .dashboard-heading h1 {
+        font-size: 30px;
     }
 
     .category-container {
         grid-template-columns: 1fr;
     }
 
-    .shop-grid {
+    .pet-card {
+        max-width: 92%;
+    }
+
+}
+/* =========================
+   PET DETAILS VIEW PAGE
+   ========================= */
+
+.pet-view-page {
+    min-height: 100vh;
+    background: #fffaf7;
+}
+
+
+/* NAVBAR */
+
+.pet-view-page .main-nav {
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: white;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.back-dashboard {
+    text-decoration: none;
+
+    color: #d87955;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* HEADING */
+
+.pet-view-heading {
+    text-align: center;
+
+    padding: 45px 20px 25px;
+}
+
+.pet-view-heading p {
+    color: #d87955;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.pet-view-heading h1 {
+    font-size: 36px;
+
+    margin: 10px 0;
+}
+
+.pet-view-heading span {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* DETAILS CARD */
+
+.pet-details-card {
+    width: 650px;
+    max-width: 90%;
+
+    margin: 10px auto 50px;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* PET ICON */
+
+.pet-view-icon {
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #f6d7c7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 58px;
+}
+
+
+.pet-details-card h2 {
+    font-size: 28px;
+
+    margin-bottom: 7px;
+}
+
+
+.pet-type {
+    color: #d87955;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 28px;
+}
+
+
+/* INFORMATION BOXES */
+
+.pet-info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.pet-info-box {
+    padding: 20px 10px;
+
+    background: #fffaf7;
+
+    border-radius: 15px;
+}
+
+
+.pet-info-box span {
+    font-size: 25px;
+}
+
+
+.pet-info-box p {
+    color: #777;
+
+    font-size: 13px;
+
+    margin: 8px 0 5px;
+}
+
+
+.pet-info-box h3 {
+    font-size: 16px;
+}
+
+
+/* ADD ANOTHER PET */
+
+.add-another-pet-btn {
+    border: none;
+
+    background: #d87955;
+
+    color: white;
+
+    padding: 13px 28px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.add-another-pet-btn:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .pet-view-heading h1 {
+        font-size: 30px;
+    }
+
+    .pet-details-card {
+        padding: 30px 20px;
+    }
+
+    .pet-info-grid {
         grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   MULTIPLE PETS
+   ========================= */
+
+.pets-section {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.pets-section > h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.pets-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* PET CARD */
+
+.pets-container .pet-card {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    background: white;
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.pets-container .pet-card:hover {
+    transform: translateY(-4px);
+}
+
+.pet-card-content {
+    flex: 1;
+}
+
+.pet-card-content h2 {
+    margin-bottom: 7px;
+    font-size: 21px;
+}
+
+.pet-card-content p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+
+/* VIEW DETAILS BUTTON */
+
+.view-pet-btn {
+    border: none;
+
+    background: #d87955;
+    color: white;
+
+    padding: 9px 16px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.view-pet-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .pets-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   HEALTH PET CARDS
+   ========================= */
+
+.health-pets-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto 60px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.health-pet-card {
+    background: white;
+
+    padding: 30px 20px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.health-pet-card:hover {
+    transform: translateY(-5px);
+}
+
+.health-pet-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #f6d7c7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+}
+
+.health-pet-card h2 {
+    margin-bottom: 8px;
+}
+
+.health-pet-card p {
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+.view-health-btn {
+    border: none;
+
+    background: #d87955;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 22px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.view-health-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 650px) {
+
+    .health-pets-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   HEALTH DETAILS PAGE
+   ========================= */
+
+.health-details-page {
+    min-height: 100vh;
+    background: #fffaf7;
+}
+
+
+/* HEADING */
+
+.health-details-heading {
+    text-align: center;
+    padding: 45px 20px 25px;
+}
+
+.health-details-heading p {
+    color: #d87955;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.health-details-heading h1 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.health-details-heading span {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* FORM BOX */
+
+.health-form-box {
+    width: 650px;
+    max-width: 90%;
+
+    margin: 10px auto 60px;
+
+    padding: 35px 45px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.health-form-box form {
+    text-align: left;
+}
+
+.health-form-box label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-top: 18px;
+    margin-bottom: 7px;
+}
+
+.health-form-box input,
+.health-form-box select,
+.health-form-box textarea {
+    width: 100%;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    padding: 12px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    font-family: Arial, sans-serif;
+}
+
+.health-form-box input,
+.health-form-box select {
+    height: 46px;
+}
+
+.health-form-box textarea {
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+.health-form-box input:focus,
+.health-form-box select:focus,
+.health-form-box textarea:focus {
+    border-color: #d87955;
+}
+
+
+/* SAVE BUTTON */
+
+.save-health-btn {
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #d87955;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.save-health-btn:hover {
+    transform: translateY(-2px);
+}
+/* =========================
+   HEALTH DETAILS PAGE
+   ========================= */
+
+.health-details-page {
+    min-height: 100vh;
+    background: #fffaf7;
+}
+
+
+/* HEADING */
+
+.health-details-heading {
+    text-align: center;
+    padding: 45px 20px 25px;
+}
+
+.health-details-heading p {
+    color: #d87955;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.health-details-heading h1 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.health-details-heading span {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* FORM BOX */
+
+.health-form-box {
+    width: 650px;
+    max-width: 90%;
+
+    margin: 10px auto 60px;
+
+    padding: 35px 45px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.health-form-box form {
+    text-align: left;
+}
+
+.health-form-box label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-top: 18px;
+    margin-bottom: 7px;
+}
+
+.health-form-box input,
+.health-form-box select,
+.health-form-box textarea {
+    width: 100%;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    padding: 12px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    font-family: Arial, sans-serif;
+}
+
+.health-form-box input,
+.health-form-box select {
+    height: 46px;
+}
+
+.health-form-box textarea {
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+.health-form-box input:focus,
+.health-form-box select:focus,
+.health-form-box textarea:focus {
+    border-color: #d87955;
+}
+
+
+/* SAVE BUTTON */
+
+.save-health-btn {
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #d87955;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.save-health-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .health-form-box {
+        padding: 30px 22px;
+    }
+
+    .health-details-heading h1 {
+        font-size: 28px;
     }
 
 }

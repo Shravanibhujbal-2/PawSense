@@ -13,32 +13,64 @@
 <body>
 
     <nav class="main-nav">
-        <div class="logo">🐾 PawSense</div>
-        <a href="pet-dashboard.html" class="back-link">← Back</a>
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="pet-dashboard.html" class="back-link">
+            ← Back
+        </a>
+
     </nav>
+
 
     <div class="category-page">
 
-        <div class="category-big-icon">❤️</div>
+        <div class="category-big-icon">
+            ❤️
+        </div>
 
-        <h1>Pet Health</h1>
+        <h1>
+            Pet Health
+        </h1>
 
-        <p>Health information of your pet</p>
+        <p>
+            Health information of your pets
+        </p>
 
 
-        <div class="info-card">
+        <!-- PETS -->
 
-            <h2 id="healthPetName">🐶 Your Pet</h2>
+        <div
+            id="healthPetsContainer"
+            class="health-pets-container">
 
-            <p id="healthPetInfo">
-                Pet information will appear here.
-            </p>
+            <!-- Pet health cards will appear here -->
 
         </div>
 
+
+        <!-- ADD NEW PET -->
+
+        <div class="add-pet-section">
+
+            <button
+                class="add-new-pet-btn"
+                onclick="addAnotherPet()">
+
+                🐾 + Add New Pet
+
+            </button>
+
+        </div>
+
+
     </div>
+
 
     <script src="../js/script.js"></script>
 
 </body>
+
 </html>

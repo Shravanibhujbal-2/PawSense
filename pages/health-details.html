@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Health Details</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body class="health-details-page">
+
+
+    <!-- NAVBAR -->
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="health.html" class="back-link">
+            ← Back
+        </a>
+
+    </nav>
+
+
+    <!-- HEADING -->
+
+    <section class="health-details-heading">
+
+        <p>🐾 PAWSENSE CARE</p>
+
+        <h1 id="healthDetailsPetName">
+            Pet Health
+        </h1>
+
+        <span id="healthDetailsPetInfo">
+            Health information
+        </span>
+
+    </section>
+
+
+    <!-- HEALTH FORM -->
+
+    <div class="health-form-box">
+
+        <form onsubmit="saveHealth(event)">
+
+
+            <label>Weight (kg)</label>
+
+            <input
+                type="number"
+                id="petWeight"
+                placeholder="Enter weight"
+                step="0.1"
+                min="0"
+                required>
+
+
+            <label>Height (cm)</label>
+
+            <input
+                type="number"
+                id="petHeight"
+                placeholder="Enter height"
+                step="0.1"
+                min="0"
+                required>
+
+
+            <label>Temperature (°C)</label>
+
+            <input
+                type="number"
+                id="petTemperature"
+                placeholder="Enter temperature"
+                step="0.1"
+                min="0"
+                required>
+
+
+            <label>Health Status</label>
+
+            <select id="healthStatus" required>
+
+                <option value="">
+                    Select health status
+                </option>
+
+                <option value="Healthy">
+                    Healthy
+                </option>
+
+                <option value="Needs Attention">
+                    Needs Attention
+                </option>
+
+                <option value="Under Treatment">
+                    Under Treatment
+                </option>
+
+            </select>
+
+
+            <label>Diet</label>
+
+            <textarea
+                id="petDiet"
+                placeholder="Enter diet information"></textarea>
+
+
+            <label>Allergies</label>
+
+            <textarea
+                id="petAllergies"
+                placeholder="Mention any allergies"></textarea>
+
+
+            <label>Activity</label>
+
+            <textarea
+                id="petActivity"
+                placeholder="Describe daily activity"></textarea>
+
+
+            <label>Symptoms / Notes</label>
+
+            <textarea
+                id="petSymptoms"
+                placeholder="Enter symptoms or additional notes"></textarea>
+
+
+            <button
+                type="submit"
+                class="save-health-btn">
+
+                ❤️ Save Health Details →
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

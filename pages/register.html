@@ -1,103 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>PawSense | Create Account</title>
 
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="login-page">
+<body class="register-page">
 
-    <div class="login-container">
+    <div class="register-container">
 
-        <div class="login-left">
+        <!-- LEFT SIDE -->
 
-            <div class="login-logo">
+        <div class="register-left">
+
+            <div class="register-logo">
                 🐾 PawSense
             </div>
 
-            <h1>Create Your Account 🐶</h1>
+            <div class="register-pet">
+                🐾
+            </div>
+
+            <h1>
+                Start Your Pet Care Journey! 🐾
+            </h1>
 
             <p>
-                Join PawSense and keep your pet's
-                health and care information organized.
+                Create your PawSense account and
+                take better care of your furry friend.
             </p>
-
-            <div class="login-pet">
-                🐕‍🦺
-            </div>
 
         </div>
 
 
-        <div class="login-box">
+        <!-- REGISTER FORM -->
 
-            <h2>Create Account</h2>
+        <div class="register-box">
 
-            <p class="login-subtitle">
-                Register to start caring for your pet
-            </p>
+            <div class="register-title">
+
+                <span>🐾</span>
+
+                <h2>Create Account</h2>
+
+                <p>
+                    Join PawSense today
+                </p>
+
+            </div>
 
 
             <form onsubmit="registerUser(event)">
 
+                <!-- NAME -->
+
                 <label>Full Name</label>
 
-                <input
-                    type="text"
-                    id="registerName"
-                    placeholder="Enter your full name"
-                    required
-                >
+                <div class="input-box">
 
+                    <span>👤</span>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
 
                 <label>Email Address</label>
 
-                <input
-                    type="email"
-                    id="registerEmail"
-                    placeholder="Enter your email"
-                    required
-                >
+                <div class="input-box">
 
+                    <span>📧</span>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
 
                 <label>Password</label>
 
-                <input
-                    type="password"
-                    id="registerPassword"
-                    placeholder="Create a password"
-                    required
-                >
+                <div class="input-box">
 
+                    <span>🔒</span>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
 
                 <label>Confirm Password</label>
 
-                <input
-                    type="password"
-                    id="confirmPassword"
-                    placeholder="Confirm your password"
-                    required
-                >
+                <div class="input-box">
+
+                    <span>🔐</span>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                </div>
 
 
-                <button type="submit" class="login-button">
-                    Create Account 🐾
+                <!-- BUTTON -->
+
+                <button type="submit" class="paw-login-button">
+
+                    <span>🐾</span>
+
+                    Create Account
+
+                    <span>→</span>
+
                 </button>
 
             </form>
 
 
-            <div class="or-line">
-                <span>OR</span>
-            </div>
-
-
             <p class="register-text">
+
                 Already have an account?
-                <a href="login.html">Login</a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
             </p>
 
 
@@ -113,4 +167,5 @@
     <script src="../js/script.js"></script>
 
 </body>
+
 </html>
