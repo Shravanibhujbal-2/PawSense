@@ -2,74 +2,109 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PawSense | Health</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <title>PawSense | Pet Health</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
 </head>
+
 
 <body>
 
-    <nav class="main-nav">
 
-        <div class="logo">
-            🐾 PawSense
-        </div>
+<nav class="main-nav">
 
-        <a href="pet-dashboard.html" class="back-link">
-            ← Back
-        </a>
+    <div class="logo">
+        🐾 PawSense
+    </div>
 
-    </nav>
+    <a href="pet-dashboard.html"
+       class="back-link">
+        ← Back
+    </a>
 
-
-    <div class="category-page">
-
-        <div class="category-big-icon">
-            ❤️
-        </div>
-
-        <h1>
-            Pet Health
-        </h1>
-
-        <p>
-            Health information of your pets
-        </p>
+</nav>
 
 
-        <!-- PETS -->
 
-        <div
-            id="healthPetsContainer"
-            class="health-pets-container">
-
-            <!-- Pet health cards will appear here -->
-
-        </div>
+<div class="category-page">
 
 
-        <!-- ADD NEW PET -->
+    <div class="category-big-icon">
+        ❤️
+    </div>
 
-        <div class="add-pet-section">
 
-            <button
-                class="add-new-pet-btn"
-                onclick="addAnotherPet()">
+    <h1>
+        Pet Health
+    </h1>
 
-                🐾 + Add New Pet
 
-            </button>
+    <p>
+        Manage your pets' health information
+    </p>
 
-        </div>
 
+
+    <!-- PET CARDS -->
+
+    <div id="healthPetsContainer"
+         class="health-pets-container">
+
+        <!-- Pet cards will appear here -->
 
     </div>
 
 
-    <script src="../js/script.js"></script>
+
+    <!-- ADD PET -->
+
+    <div class="add-pet-section">
+
+    <div class="add-pet-card">
+
+        <div class="add-pet-icon">
+            🐾
+        </div>
+
+        <div class="add-pet-text">
+
+            <h2>Add Your Pet</h2>
+
+            <p>
+                Add your pet's health details and keep
+                their information organized.
+            </p>
+
+        </div>
+
+        <button
+            class="add-new-pet-btn"
+            onclick="window.location.href='add-pet.html'">
+
+            + Add Pet Details →
+
+        </button>
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+<script src="../js/script.js"></script>
+
 
 </body>
 

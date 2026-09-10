@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Pet Care</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="store.html" class="back-link">
+            ← Store
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            🛏️
+        </div>
+
+        <h1>Pet Care</h1>
+
+        <p>
+            Choose care products for your pet
+        </p>
+
+
+        <div class="shop-grid">
+
+
+            <!-- PET BED -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🛏️
+                </div>
+
+                <h2>
+                    Pet Bed
+                </h2>
+
+                <p>
+                    Comfortable bed for your pet
+                </p>
+
+                <h3>
+                    ₹599
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Bed')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Bed', 599)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- FEEDING MAT -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🥣
+                </div>
+
+                <h2>
+                    Feeding Mat
+                </h2>
+
+                <p>
+                    Keeps your pet feeding area clean
+                </p>
+
+                <h3>
+                    ₹249
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Feeding Mat')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Feeding Mat', 249)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PET BLANKET -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🧺
+                </div>
+
+                <h2>
+                    Pet Blanket
+                </h2>
+
+                <p>
+                    Soft and warm blanket for pets
+                </p>
+
+                <h3>
+                    ₹399
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Blanket')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Blanket', 399)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <br><br>
+
+
+        <button
+            class="shop-button"
+            onclick="window.location.href='cart.html'">
+
+            🛒 View Cart
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function shopNow(productName) {
+
+            alert(
+                "You selected " +
+                productName +
+                " 🛍️"
+            );
+
+        }
+
+
+        function addToCart(productName, price) {
+
+            alert(
+                productName +
+                " added to cart! 🛒"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

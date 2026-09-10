@@ -2,78 +2,180 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>PawSense | Store</title>
 
-    <title>PawSense | Pet Shop</title>
-
-    <link rel="stylesheet"
-          href="../css/style.css">
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-<nav class="main-nav">
+    <nav class="main-nav">
 
-    <div class="logo">
-        🐾 PawSense
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="pet-dashboard.html" class="back-link">
+            ← Back
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            🛍️
+        </div>
+
+        <h1>Pet Store</h1>
+
+        <p>
+            Choose a category
+        </p>
+
+
+        <div class="shop-grid">
+
+
+            <!-- PET FOOD -->
+
+            <div class="shop-card"
+                 onclick="openCategory('food.html')">
+
+                <div class="shop-icon">
+                    🍖
+                </div>
+
+                <h2>
+                    Pet Food
+                </h2>
+
+                <p>
+                    Food & treats for pets
+                </p>
+
+            </div>
+
+
+            <!-- TOYS -->
+
+            <div class="shop-card"
+                 onclick="openCategory('toys.html')">
+
+                <div class="shop-icon">
+                    🧸
+                </div>
+
+                <h2>
+                    Toys
+                </h2>
+
+                <p>
+                    Fun toys for pets
+                </p>
+
+            </div>
+
+
+            <!-- ACCESSORIES -->
+
+            <div class="shop-card"
+                 onclick="openCategory('accessories.html')">
+
+                <div class="shop-icon">
+                    🦮
+                </div>
+
+                <h2>
+                    Accessories
+                </h2>
+
+                <p>
+                    Collars, belts & more
+                </p>
+
+            </div>
+
+
+            <!-- GROOMING -->
+
+            <div class="shop-card"
+                 onclick="openCategory('grooming.html')">
+
+                <div class="shop-icon">
+                    🛁
+                </div>
+
+                <h2>
+                    Grooming
+                </h2>
+
+                <p>
+                    Shampoo & grooming products
+                </p>
+
+            </div>
+
+
+            <!-- MEDICINES -->
+
+            <div class="shop-card"
+                 onclick="openCategory('medicine.html')">
+
+                <div class="shop-icon">
+                    💊
+                </div>
+
+                <h2>
+                    Medicines
+                </h2>
+
+                <p>
+                    Pet medicines & health products
+                </p>
+
+            </div>
+
+
+            <!-- PET CARE -->
+
+            <div class="shop-card"
+                 onclick="openCategory('pet-care.html')">
+
+                <div class="shop-icon">
+                    🛏️
+                </div>
+
+                <h2>
+                    Pet Care
+                </h2>
+
+                <p>
+                    Care products for pets
+                </p>
+
+            </div>
+
+
+        </div>
+
     </div>
 
-    <a href="pet-dashboard.html"
-       class="back-link">
-        ← Back
-    </a>
 
-</nav>
+    <script>
 
+        function openCategory(page) {
 
-<div class="category-page">
+            window.location.href = page;
 
-    <div class="category-big-icon">
-        🛍️
-    </div>
+        }
 
-    <h1>Pet Shop</h1>
-
-    <p>Everything your pet needs.</p>
-
-
-    <div class="shop-grid">
-
-        <div class="shop-card">
-            🍖
-            <h2>Pet Food</h2>
-            <p>Food & treats</p>
-        </div>
-
-
-        <div class="shop-card">
-            🧸
-            <h2>Toys</h2>
-            <p>Fun toys for pets</p>
-        </div>
-
-
-        <div class="shop-card">
-            🦮
-            <h2>Accessories</h2>
-            <p>Collars, belts & more</p>
-        </div>
-
-
-        <div class="shop-card">
-            🛏️
-            <h2>Pet Care</h2>
-            <p>Care products</p>
-        </div>
-
-    </div>
-
-</div>
+    </script>
 
 </body>
+
 </html>

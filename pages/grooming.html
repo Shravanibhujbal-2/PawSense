@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Grooming</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="store.html" class="back-link">
+            ← Store
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            🛁
+        </div>
+
+        <h1>Pet Grooming</h1>
+
+        <p>
+            Choose grooming products for your pet
+        </p>
+
+
+        <div class="shop-grid">
+
+
+            <!-- PET SHAMPOO -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🧴
+                </div>
+
+                <h2>
+                    Pet Shampoo
+                </h2>
+
+                <p>
+                    Gentle shampoo for healthy fur
+                </p>
+
+                <h3>
+                    ₹299
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Shampoo')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Shampoo', 299)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PET BRUSH -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🪮
+                </div>
+
+                <h2>
+                    Pet Brush
+                </h2>
+
+                <p>
+                    Brush for smooth and clean fur
+                </p>
+
+                <h3>
+                    ₹199
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Brush')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Brush', 199)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- NAIL CLIPPER -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    ✂️
+                </div>
+
+                <h2>
+                    Nail Clipper
+                </h2>
+
+                <p>
+                    Easy nail trimming for pets
+                </p>
+
+                <h3>
+                    ₹149
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Nail Clipper')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Nail Clipper', 149)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <br><br>
+
+
+        <button
+            class="shop-button"
+            onclick="window.location.href='cart.html'">
+
+            🛒 View Cart
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function shopNow(productName) {
+
+            alert(
+                "You selected " +
+                productName +
+                " 🛍️"
+            );
+
+        }
+
+
+        function addToCart(productName, price) {
+
+            alert(
+                productName +
+                " added to cart! 🛒"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

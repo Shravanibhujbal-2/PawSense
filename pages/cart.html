@@ -1,0 +1,292 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Cart</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="store.html" class="back-link">
+            ← Store
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            🛒
+        </div>
+
+        <h1>Your Cart</h1>
+
+        <p>
+            Review your selected products
+        </p>
+
+
+        <div id="cartContainer">
+
+            <p>
+                Your cart is empty 🐾
+            </p>
+
+        </div>
+
+
+        <h2 id="cartTotal">
+            Total: ₹0
+        </h2>
+
+
+        <br>
+
+
+        <button
+            class="shop-button"
+            onclick="window.location.href='store.html'">
+
+            🛍️ Continue Shopping
+
+        </button>
+
+
+        <button
+            class="shop-button"
+            onclick="checkout()">
+
+            ✅ Checkout
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        let cart = [];
+
+
+        function addProduct(name, price) {
+
+            const existingProduct =
+                cart.find(
+                    item => item.name === name
+                );
+
+
+            if (existingProduct) {
+
+                existingProduct.quantity++;
+
+            } else {
+
+                cart.push({
+
+                    name: name,
+
+                    price: price,
+
+                    quantity: 1
+
+                });
+
+            }
+
+            displayCart();
+
+        }
+
+
+        function increaseQuantity(index) {
+
+            cart[index].quantity++;
+
+            displayCart();
+
+        }
+
+
+        function decreaseQuantity(index) {
+
+            if (cart[index].quantity > 1) {
+
+                cart[index].quantity--;
+
+            } else {
+
+                cart.splice(index, 1);
+
+            }
+
+            displayCart();
+
+        }
+
+
+        function removeProduct(index) {
+
+            cart.splice(index, 1);
+
+            displayCart();
+
+        }
+
+
+        function displayCart() {
+
+            const container =
+                document.getElementById(
+                    "cartContainer"
+                );
+
+            const totalElement =
+                document.getElementById(
+                    "cartTotal"
+                );
+
+
+            container.innerHTML = "";
+
+
+            if (cart.length === 0) {
+
+                container.innerHTML =
+                    "<p>Your cart is empty 🐾</p>";
+
+                totalElement.textContent =
+                    "Total: ₹0";
+
+                return;
+
+            }
+
+
+            let total = 0;
+
+
+            cart.forEach(
+                function (item, index) {
+
+                    const itemTotal =
+                        item.price *
+                        item.quantity;
+
+
+                    total += itemTotal;
+
+
+                    const product =
+                        document.createElement("div");
+
+
+                    product.className =
+                        "shop-card";
+
+
+                    product.innerHTML = `
+
+                        <h2>
+                            ${item.name}
+                        </h2>
+
+                        <p>
+                            Price: ₹${item.price}
+                        </p>
+
+                        <p>
+                            Quantity:
+                        </p>
+
+                        <button
+                            class="shop-button"
+                            onclick="decreaseQuantity(${index})">
+
+                            −
+
+                        </button>
+
+                        <strong>
+                            ${item.quantity}
+                        </strong>
+
+                        <button
+                            class="shop-button"
+                            onclick="increaseQuantity(${index})">
+
+                            +
+
+                        </button>
+
+                        <p>
+                            Subtotal: ₹${itemTotal}
+                        </p>
+
+                        <button
+                            class="shop-button"
+                            onclick="removeProduct(${index})">
+
+                            🗑️ Remove
+
+                        </button>
+
+                    `;
+
+
+                    container.appendChild(product);
+
+                }
+            );
+
+
+            totalElement.textContent =
+                "Total: ₹" + total;
+
+        }
+
+
+        function checkout() {
+
+            if (cart.length === 0) {
+
+                alert(
+                    "Your cart is empty! 🛒"
+                );
+
+                return;
+
+            }
+
+
+            alert(
+                "Order placed successfully! 🐾❤️"
+            );
+
+
+            cart = [];
+
+            displayCart();
+
+        }
+
+
+        displayCart();
+
+    </script>
+
+</body>
+
+</html>                                                   

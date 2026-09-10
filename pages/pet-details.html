@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PawSense | Add Pet</title>
+    <title>PawSense | Explore Services</title>
 
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -18,91 +18,48 @@
             🐾
         </div>
 
-        <p class="small-title">🐾 PAWSENSE CARE</p>
+        <p class="small-title">
+            🐾 PAWSENSE CARE
+        </p>
 
-        <h1>Add Your Pet</h1>
+        <h1>
+            Explore Services
+        </h1>
 
         <p class="subtitle">
-            Tell us a little about your best friend 💕
+            Explore the services available for your pet 💕
         </p>
 
 
-        <form onsubmit="savePet(event)">
+        <div class="service-option">
 
-            <label>Pet Name</label>
+            <div class="service-icon">
+                ❤️
+            </div>
 
-            <input
-                type="text"
-                id="petName"
-                placeholder="e.g. Bruno"
-                required
-            >
+            <h2>
+                Pet Health
+            </h2>
 
+            <p>
+                Manage your pet's health and other information.
+            </p>
 
-            <label>Pet Type</label>
-
-            <select id="petType" required>
-
-                <option value="">Select Pet Type</option>
-
-                <option value="Dog">🐶 Dog</option>
-
-                <option value="Cat">🐱 Cat</option>
-
-                <option value="Rabbit">🐰 Rabbit</option>
-
-                <option value="Bird">🐦 Bird</option>
-
-                <option value="Other">🐾 Other</option>
-
-            </select>
+        </div>
 
 
-            <label>Age</label>
+        <button
+            type="button"
+            class="save-pet-btn"
+            onclick="window.location.href='pet-dashboard.html'">
 
-            <input
-                type="number"
-                id="petAge"
-                placeholder="Enter age"
-                min="0"
-                required
-            >
+            🐾 Explore Services →
 
-
-            <label>Gender</label>
-
-            <select id="petGender" required>
-
-                <option value="">Select Gender</option>
-
-                <option value="Male">Male</option>
-
-                <option value="Female">Female</option>
-
-            </select>
-
-
-            <label>Breed</label>
-
-            <input
-                type="text"
-                id="petBreed"
-                placeholder="e.g. Labrador"
-            >
-
-
-            <button type="submit" class="save-pet-btn">
-
-                🐾 Save Pet & Continue →
-
-            </button>
-
-        </form>
+        </button>
 
     </div>
 
 
-    <script src="../js/script.js"></script>
-
 </body>
+
 </html>

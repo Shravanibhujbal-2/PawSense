@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Ball Toys</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="toys.html" class="back-link">
+            ← Toys
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            ⚽
+        </div>
+
+        <h1>Ball Toys</h1>
+
+        <p>
+            Choose a ball toy for your pet
+        </p>
+
+
+        <div class="shop-grid">
+
+
+            <!-- TENNIS BALL -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🎾
+                </div>
+
+                <h2>
+                    Tennis Ball
+                </h2>
+
+                <p>
+                    Fun ball for playing and fetching
+                </p>
+
+                <h3>
+                    ₹99
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Tennis Ball')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Tennis Ball', 99)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- RUBBER BALL -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    ⚽
+                </div>
+
+                <h2>
+                    Rubber Ball
+                </h2>
+
+                <p>
+                    Durable ball for active pets
+                </p>
+
+                <h3>
+                    ₹149
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Rubber Ball')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Rubber Ball', 149)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- SQUEAKY BALL -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🟠
+                </div>
+
+                <h2>
+                    Squeaky Ball
+                </h2>
+
+                <p>
+                    Fun squeaky toy for pets
+                </p>
+
+                <h3>
+                    ₹199
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Squeaky Ball')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Squeaky Ball', 199)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <br><br>
+
+
+        <button
+            class="shop-button"
+            onclick="window.location.href='cart.html'">
+
+            🛒 View Cart
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function shopNow(productName) {
+
+            alert(
+                "You selected " +
+                productName +
+                " 🛍️"
+            );
+
+        }
+
+
+        function addToCart(productName, price) {
+
+            alert(
+                productName +
+                " added to cart! 🛒"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

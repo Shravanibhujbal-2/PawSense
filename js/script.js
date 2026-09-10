@@ -1,5 +1,71 @@
 // ======================================
-// PawSense - REGISTER
+// PawSense - FRONTEND ONLY
+// No LocalStorage / No Backend / No Database
+// ======================================
+
+
+// ======================================
+// GLOBAL DATA
+// ======================================
+
+let currentUser = null;
+let pets = [];
+let selectedPetIndex = null;
+
+
+// ======================================
+// URL PET DATA
+// ======================================
+
+function savePetsInURL() {
+
+    return encodeURIComponent(
+        JSON.stringify(pets)
+    );
+
+}
+
+
+function loadPetsFromURL() {
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const petsData =
+        params.get("pets");
+
+    if (petsData) {
+
+        try {
+
+            pets =
+                JSON.parse(
+                    decodeURIComponent(petsData)
+                );
+
+        } catch (error) {
+
+            pets = [];
+
+        }
+
+    }
+
+    const selected =
+        params.get("selected");
+
+    if (selected !== null) {
+
+        selectedPetIndex =
+            parseInt(selected);
+
+    }
+
+}
+
+
+// ======================================
+// REGISTER
 // ======================================
 
 function registerUser(event) {
@@ -18,16 +84,14 @@ function registerUser(event) {
     const confirmPassword =
         document.getElementById("confirmPassword").value;
 
-
     if (password !== confirmPassword) {
 
         alert("Passwords do not match! ❌");
-
         return;
+
     }
 
-
-    const user = {
+    currentUser = {
 
         name: name,
         email: email,
@@ -35,32 +99,18 @@ function registerUser(event) {
 
     };
 
-
-    localStorage.setItem(
-        "pawSenseUser",
-        JSON.stringify(user)
-    );
-
-
-    localStorage.setItem(
-        "pawSenseLoggedIn",
-        "true"
-    );
-
-
     alert(
         "Account created successfully! Welcome to PawSense! 🐾"
     );
 
-
-    window.location.href = "dashboard.html";
+    window.location.href =
+        "dashboard.html";
 
 }
 
 
-
 // ======================================
-// PawSense - LOGIN
+// LOGIN
 // ======================================
 
 function loginUser(event) {
@@ -73,52 +123,42 @@ function loginUser(event) {
     const password =
         document.getElementById("loginPassword").value;
 
+    if (!currentUser) {
 
-    const savedUser =
-        JSON.parse(
-            localStorage.getItem("pawSenseUser")
+        alert(
+            "Please create an account first! 🐾"
         );
 
-
-    if (!savedUser) {
-
-        alert("Please create an account first! 🐾");
-
-        window.location.href = "register.html";
+        window.location.href =
+            "register.html";
 
         return;
+
     }
 
-
     if (
-        email === savedUser.email &&
-        password === savedUser.password
+        email === currentUser.email &&
+        password === currentUser.password
     ) {
-
-        localStorage.setItem(
-            "pawSenseLoggedIn",
-            "true"
-        );
-
 
         alert(
             "Welcome to PawSense, " +
-            savedUser.name +
+            currentUser.name +
             "! 🐾"
         );
-
 
         window.location.href =
             "dashboard.html";
 
     } else {
 
-        alert("Invalid email or password! ❌");
+        alert(
+            "Invalid email or password! ❌"
+        );
 
     }
 
 }
-
 
 
 // ======================================
@@ -127,23 +167,15 @@ function loginUser(event) {
 
 function getUserName() {
 
-    const user =
-        JSON.parse(
-            localStorage.getItem("pawSenseUser")
-        );
+    if (currentUser) {
 
-
-    if (user) {
-
-        return user.name;
+        return currentUser.name;
 
     }
-
 
     return "Pet Owner";
 
 }
-
 
 
 // ======================================
@@ -154,13 +186,15 @@ document.addEventListener(
     "DOMContentLoaded",
     function () {
 
+        loadPetsFromURL();
+
+
         const userName =
             getUserName();
 
 
         const userElement =
             document.getElementById("userName");
-
 
         if (userElement) {
 
@@ -173,7 +207,6 @@ document.addEventListener(
         const dashboardUser =
             document.getElementById("dashboardUser");
 
-
         if (dashboardUser) {
 
             dashboardUser.textContent =
@@ -182,11 +215,9 @@ document.addEventListener(
         }
 
 
-        // Health page
         loadHealthPets();
 
 
-        // Health details page
         if (
             document.getElementById(
                 "healthDetailsPetName"
@@ -197,9 +228,19 @@ document.addEventListener(
 
         }
 
+
+        if (
+            document.getElementById(
+                "viewPetName"
+            )
+        ) {
+
+            loadPetDetails();
+
+        }
+
     }
 );
-
 
 
 // ======================================
@@ -214,7 +255,6 @@ function goToPetDetails() {
 }
 
 
-
 // ======================================
 // SAVE PET DETAILS
 // ======================================
@@ -227,155 +267,96 @@ function savePet(event) {
     const pet = {
 
         name:
-            document.getElementById("petName").value.trim(),
+            document.getElementById(
+                "petName"
+            ).value.trim(),
 
         type:
-            document.getElementById("petType").value,
+            document.getElementById(
+                "petType"
+            ).value,
 
         age:
-            document.getElementById("petAge").value,
+            document.getElementById(
+                "petAge"
+            ).value,
 
         gender:
-            document.getElementById("petGender").value,
+            document.getElementById(
+                "petGender"
+            ).value,
 
         breed:
-            document.getElementById("petBreed").value.trim()
+            document.getElementById(
+                "petBreed"
+            ).value.trim(),
+
+
+        health: {
+
+            weight:
+                document.getElementById(
+                    "petWeight"
+                ).value,
+
+            height:
+                document.getElementById(
+                    "petHeight"
+                ).value,
+
+            temperature:
+                document.getElementById(
+                    "petTemperature"
+                ).value,
+
+            status:
+                document.getElementById(
+                    "healthStatus"
+                ).value,
+
+            diet:
+                document.getElementById(
+                    "petDiet"
+                ).value.trim(),
+
+            allergies:
+                document.getElementById(
+                    "petAllergies"
+                ).value.trim(),
+
+            activity:
+                document.getElementById(
+                    "petActivity"
+                ).value.trim(),
+
+            symptoms:
+                document.getElementById(
+                    "petSymptoms"
+                ).value.trim()
+
+        }
 
     };
-
-
-    let pets =
-        JSON.parse(
-            localStorage.getItem("pawSensePets")
-        ) || [];
 
 
     pets.push(pet);
 
 
-    localStorage.setItem(
-        "pawSensePets",
-        JSON.stringify(pets)
-    );
-
-
-    localStorage.setItem(
-        "pawSensePet",
-        JSON.stringify(pet)
-    );
-
-
-    window.location.href =
-        "pet-dashboard.html";
-
-}
-
-
-
-// ======================================
-// RESET PASSWORD
-// ======================================
-
-function resetPassword(event) {
-
-    event.preventDefault();
-
-
-    const email =
-        document.getElementById(
-            "resetEmail"
-        ).value.trim();
-
-
-    const newPassword =
-        document.getElementById(
-            "newPassword"
-        ).value;
-
-
-    const confirmPassword =
-        document.getElementById(
-            "confirmNewPassword"
-        ).value;
-
-
-    const savedUser =
-        JSON.parse(
-            localStorage.getItem("pawSenseUser")
-        );
-
-
-    if (!savedUser) {
-
-        alert(
-            "No account found! Please create an account first. 🐾"
-        );
-
-        window.location.href =
-            "register.html";
-
-        return;
-    }
-
-
-    if (email !== savedUser.email) {
-
-        alert(
-            "Email address does not match! ❌"
-        );
-
-        return;
-    }
-
-
-    if (newPassword !== confirmPassword) {
-
-        alert(
-            "Passwords do not match! ❌"
-        );
-
-        return;
-    }
-
-
-    savedUser.password =
-        newPassword;
-
-
-    localStorage.setItem(
-        "pawSenseUser",
-        JSON.stringify(savedUser)
-    );
+    selectedPetIndex =
+        pets.length - 1;
 
 
     alert(
-        "Password reset successfully! 🐾🔐"
+        pet.name +
+        " added successfully! 🐾❤️"
     );
 
 
     window.location.href =
-        "login.html";
+        "health.html?pets=" +
+        savePetsInURL();
 
 }
-
-
-
-// ======================================
-// LOGOUT
-// ======================================
-
-function logoutUser() {
-
-    localStorage.removeItem(
-        "pawSenseLoggedIn"
-    );
-
-
-    window.location.href =
-        "login.html";
-
-}
-
 
 
 // ======================================
@@ -401,88 +382,11 @@ function getPetIcon(type) {
 }
 
 
-
 // ======================================
-// VIEW PET DETAILS
-// ======================================
-
-function loadPetDetails() {
-
-    const pet =
-        JSON.parse(
-            localStorage.getItem("pawSensePet")
-        );
-
-
-    if (!pet) {
-
-        return;
-
-    }
-
-
-    const petName =
-        document.getElementById("viewPetName");
-
-    const petType =
-        document.getElementById("viewPetType");
-
-    const petAge =
-        document.getElementById("viewPetAge");
-
-    const petGender =
-        document.getElementById("viewPetGender");
-
-    const petBreed =
-        document.getElementById("viewPetBreed");
-
-
-    if (petName)
-        petName.textContent = pet.name;
-
-    if (petType)
-        petType.textContent = pet.type;
-
-    if (petAge)
-        petAge.textContent =
-            pet.age + " years";
-
-    if (petGender)
-        petGender.textContent =
-            pet.gender;
-
-    if (petBreed)
-        petBreed.textContent =
-            pet.breed || "Not specified";
-
-}
-
-
-
-// ======================================
-// ADD ANOTHER PET
-// ======================================
-
-function addAnotherPet() {
-
-    window.location.href =
-        "pet-details.html";
-
-}
-
-
-
-// ======================================
-// SHOW ALL PETS ON HEALTH PAGE
+// LOAD ALL PETS ON HEALTH PAGE
 // ======================================
 
 function loadHealthPets() {
-
-    const pets =
-        JSON.parse(
-            localStorage.getItem("pawSensePets")
-        ) || [];
-
 
     const container =
         document.getElementById(
@@ -498,6 +402,34 @@ function loadHealthPets() {
 
 
     container.innerHTML = "";
+
+
+    if (pets.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="info-card">
+
+                <div class="category-big-icon">
+                    🐾
+                </div>
+
+                <h2>
+                    No pets added yet
+                </h2>
+
+                <p>
+                    Add your pet details to manage
+                    their health information.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
 
 
     pets.forEach(
@@ -517,13 +449,31 @@ function loadHealthPets() {
                     ${getPetIcon(pet.type)}
                 </div>
 
-                <h2>${pet.name}</h2>
+                <h2>
+                    ${pet.name}
+                </h2>
+
+                <p>
+                    ${pet.type}
+                    •
+                    ${pet.age} years
+                    •
+                    ${pet.gender}
+                </p>
 
                 <button
                     class="view-health-btn"
                     onclick="viewHealthDetails(${index})">
 
-                    View Health Details →
+                    👀 View Details →
+
+                </button>
+
+                <button
+                    class="delete-pet-btn"
+                    onclick="deletePet(${index})">
+
+                    🗑️ Delete
 
                 </button>
 
@@ -538,24 +488,81 @@ function loadHealthPets() {
 }
 
 
-
 // ======================================
-// OPEN SELECTED PET HEALTH
+// DELETE PET
 // ======================================
 
-function viewHealthDetails(index) {
+function deletePet(index) {
 
-    localStorage.setItem(
-        "selectedPetIndex",
-        index
+    const pet =
+        pets[index];
+
+
+    if (!pet) {
+
+        return;
+
+    }
+
+
+    const confirmDelete =
+        confirm(
+            "Are you sure you want to delete " +
+            pet.name +
+            "? 🐾"
+        );
+
+
+    if (!confirmDelete) {
+
+        return;
+
+    }
+
+
+    pets.splice(index, 1);
+
+
+    selectedPetIndex =
+        null;
+
+
+    alert(
+        "Pet deleted successfully! 🗑️"
     );
 
 
     window.location.href =
-        "health-details.html";
+        "health.html?pets=" +
+        savePetsInURL();
 
 }
 
+
+// ======================================
+// VIEW HEALTH DETAILS
+// ======================================
+
+function viewHealthDetails(index) {
+
+    if (!pets[index]) {
+
+        return;
+
+    }
+
+
+    selectedPetIndex =
+        index;
+
+
+    window.location.href =
+        "health-details.html?pets=" +
+        savePetsInURL() +
+        "&selected=" +
+        index;
+
+}
 
 
 // ======================================
@@ -564,21 +571,9 @@ function viewHealthDetails(index) {
 
 function loadSelectedPetHealth() {
 
-    const pets =
-        JSON.parse(
-            localStorage.getItem("pawSensePets")
-        ) || [];
-
-
-    const selectedIndex =
-        localStorage.getItem(
-            "selectedPetIndex"
-        );
-
-
     if (
-        selectedIndex === null ||
-        !pets[selectedIndex]
+        selectedPetIndex === null ||
+        !pets[selectedPetIndex]
     ) {
 
         return;
@@ -587,8 +582,14 @@ function loadSelectedPetHealth() {
 
 
     const pet =
-        pets[selectedIndex];
+        pets[selectedPetIndex];
 
+
+    const health =
+        pet.health || {};
+
+
+    // Heading
 
     const petName =
         document.getElementById(
@@ -621,30 +622,237 @@ function loadSelectedPetHealth() {
 
     }
 
+
+    // Basic Information
+
+    const detailPetName =
+        document.getElementById(
+            "detailPetName"
+        );
+
+    const detailPetType =
+        document.getElementById(
+            "detailPetType"
+        );
+
+    const detailPetAge =
+        document.getElementById(
+            "detailPetAge"
+        );
+
+    const detailPetGender =
+        document.getElementById(
+            "detailPetGender"
+        );
+
+    const detailPetBreed =
+        document.getElementById(
+            "detailPetBreed"
+        );
+
+
+    if (detailPetName)
+        detailPetName.textContent =
+            pet.name;
+
+
+    if (detailPetType)
+        detailPetType.textContent =
+            pet.type;
+
+
+    if (detailPetAge)
+        detailPetAge.textContent =
+            pet.age + " years";
+
+
+    if (detailPetGender)
+        detailPetGender.textContent =
+            pet.gender;
+
+
+    if (detailPetBreed)
+        detailPetBreed.textContent =
+            pet.breed || "Not specified";
+
+
+    // Health Information
+
+    const detailWeight =
+        document.getElementById(
+            "detailWeight"
+        );
+
+    const detailHeight =
+        document.getElementById(
+            "detailHeight"
+        );
+
+    const detailTemperature =
+        document.getElementById(
+            "detailTemperature"
+        );
+
+    const detailHealthStatus =
+        document.getElementById(
+            "detailHealthStatus"
+        );
+
+    const detailDiet =
+        document.getElementById(
+            "detailDiet"
+        );
+
+    const detailAllergies =
+        document.getElementById(
+            "detailAllergies"
+        );
+
+    const detailActivity =
+        document.getElementById(
+            "detailActivity"
+        );
+
+    const detailSymptoms =
+        document.getElementById(
+            "detailSymptoms"
+        );
+
+
+    if (detailWeight)
+        detailWeight.textContent =
+            health.weight
+                ? health.weight + " kg"
+                : "Not specified";
+
+
+    if (detailHeight)
+        detailHeight.textContent =
+            health.height
+                ? health.height + " cm"
+                : "Not specified";
+
+
+    if (detailTemperature)
+        detailTemperature.textContent =
+            health.temperature
+                ? health.temperature + " °C"
+                : "Not specified";
+
+
+    if (detailHealthStatus)
+        detailHealthStatus.textContent =
+            health.status || "Not specified";
+
+
+    if (detailDiet)
+        detailDiet.textContent =
+            health.diet || "Not specified";
+
+
+    if (detailAllergies)
+        detailAllergies.textContent =
+            health.allergies || "None";
+
+
+    if (detailActivity)
+        detailActivity.textContent =
+            health.activity || "Not specified";
+
+
+    if (detailSymptoms)
+        detailSymptoms.textContent =
+            health.symptoms || "None";
+
 }
 
 
-
 // ======================================
-// VIEW PET DETAILS PAGE LOAD
+// LOAD PET DETAILS
 // ======================================
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+function loadPetDetails() {
 
-        if (
-            document.getElementById(
-                "viewPetName"
-            )
-        ) {
+    if (
+        selectedPetIndex === null ||
+        !pets[selectedPetIndex]
+    ) {
 
-            loadPetDetails();
-
-        }
+        return;
 
     }
-);
+
+
+    const pet =
+        pets[selectedPetIndex];
+
+
+    const petName =
+        document.getElementById(
+            "viewPetName"
+        );
+
+    const petType =
+        document.getElementById(
+            "viewPetType"
+        );
+
+    const petAge =
+        document.getElementById(
+            "viewPetAge"
+        );
+
+    const petGender =
+        document.getElementById(
+            "viewPetGender"
+        );
+
+    const petBreed =
+        document.getElementById(
+            "viewPetBreed"
+        );
+
+
+    if (petName)
+        petName.textContent =
+            pet.name;
+
+
+    if (petType)
+        petType.textContent =
+            pet.type;
+
+
+    if (petAge)
+        petAge.textContent =
+            pet.age + " years";
+
+
+    if (petGender)
+        petGender.textContent =
+            pet.gender;
+
+
+    if (petBreed)
+        petBreed.textContent =
+            pet.breed || "Not specified";
+
+}
+
+
+// ======================================
+// ADD ANOTHER PET
+// ======================================
+
+function addAnotherPet() {
+
+    window.location.href =
+        "add-pet.html?pets=" +
+        savePetsInURL();
+
+}
+
+
 // ======================================
 // SAVE HEALTH DETAILS
 // ======================================
@@ -653,58 +861,268 @@ function saveHealth(event) {
 
     event.preventDefault();
 
-    const pets =
-        JSON.parse(
-            localStorage.getItem("pawSensePets")
-        ) || [];
-
-    const selectedIndex =
-        localStorage.getItem("selectedPetIndex");
 
     if (
-        selectedIndex === null ||
-        !pets[selectedIndex]
+        selectedPetIndex === null ||
+        !pets[selectedPetIndex]
     ) {
-        alert("Pet not found! ❌");
+
+        alert(
+            "Pet details not found! ❌"
+        );
+
         return;
+
     }
+
 
     const health = {
 
         weight:
-            document.getElementById("petWeight").value,
+            document.getElementById(
+                "petWeight"
+            ).value,
 
         height:
-            document.getElementById("petHeight").value,
+            document.getElementById(
+                "petHeight"
+            ).value,
 
         temperature:
-            document.getElementById("petTemperature").value,
+            document.getElementById(
+                "petTemperature"
+            ).value,
 
         status:
-            document.getElementById("healthStatus").value,
+            document.getElementById(
+                "healthStatus"
+            ).value,
 
         diet:
-            document.getElementById("petDiet").value.trim(),
+            document.getElementById(
+                "petDiet"
+            ).value.trim(),
 
         allergies:
-            document.getElementById("petAllergies").value.trim(),
+            document.getElementById(
+                "petAllergies"
+            ).value.trim(),
 
         activity:
-            document.getElementById("petActivity").value.trim(),
+            document.getElementById(
+                "petActivity"
+            ).value.trim(),
 
         symptoms:
-            document.getElementById("petSymptoms").value.trim()
+            document.getElementById(
+                "petSymptoms"
+            ).value.trim()
 
     };
 
-    pets[selectedIndex].health = health;
 
-    localStorage.setItem(
-        "pawSensePets",
-        JSON.stringify(pets)
+    pets[selectedPetIndex].health =
+        health;
+
+
+    alert(
+        "Health details saved successfully! ❤️🐾"
     );
 
-    alert("Health details saved successfully! ❤️🐾");
 
-    window.location.href = "health.html";
+    window.location.href =
+        "health.html?pets=" +
+        savePetsInURL();
+
+}
+
+
+// ======================================
+// SHARE WITH DOCTOR
+// ======================================
+
+function shareWithDoctor() {
+
+    if (
+        selectedPetIndex === null ||
+        !pets[selectedPetIndex]
+    ) {
+
+        alert(
+            "Pet details not found! ❌"
+        );
+
+        return;
+
+    }
+
+
+    const pet =
+        pets[selectedPetIndex];
+
+
+    let healthText =
+        "No health information added.";
+
+
+    if (pet.health) {
+
+        healthText =
+
+            "Weight: " +
+            (pet.health.weight || "Not specified") +
+            " kg\n" +
+
+            "Height: " +
+            (pet.health.height || "Not specified") +
+            " cm\n" +
+
+            "Temperature: " +
+            (pet.health.temperature || "Not specified") +
+            " °C\n" +
+
+            "Health Status: " +
+            (pet.health.status || "Not specified") +
+            "\n" +
+
+            "Diet: " +
+            (pet.health.diet || "Not specified") +
+            "\n" +
+
+            "Allergies: " +
+            (pet.health.allergies || "None") +
+            "\n" +
+
+            "Activity: " +
+            (pet.health.activity || "Not specified") +
+            "\n" +
+
+            "Symptoms: " +
+            (pet.health.symptoms || "None");
+
+    }
+
+
+    alert(
+
+        "Pet Details Ready to Share 👨‍⚕️🐾\n\n" +
+
+        "Name: " +
+        pet.name +
+
+        "\nType: " +
+        pet.type +
+
+        "\nAge: " +
+        pet.age +
+        " years" +
+
+        "\nGender: " +
+        pet.gender +
+
+        "\nBreed: " +
+        (pet.breed || "Not specified") +
+
+        "\n\nHealth Details:\n" +
+        healthText
+
+    );
+
+}
+
+
+// ======================================
+// RESET PASSWORD
+// ======================================
+
+function resetPassword(event) {
+
+    event.preventDefault();
+
+
+    if (!currentUser) {
+
+        alert(
+            "No account found! Please create an account first. 🐾"
+        );
+
+        window.location.href =
+            "register.html";
+
+        return;
+
+    }
+
+
+    const email =
+        document.getElementById(
+            "resetEmail"
+        ).value.trim();
+
+
+    const newPassword =
+        document.getElementById(
+            "newPassword"
+        ).value;
+
+
+    const confirmPassword =
+        document.getElementById(
+            "confirmNewPassword"
+        ).value;
+
+
+    if (email !== currentUser.email) {
+
+        alert(
+            "Email address does not match! ❌"
+        );
+
+        return;
+
+    }
+
+
+    if (newPassword !== confirmPassword) {
+
+        alert(
+            "Passwords do not match! ❌"
+        );
+
+        return;
+
+    }
+
+
+    currentUser.password =
+        newPassword;
+
+
+    alert(
+        "Password reset successfully! 🐾🔐"
+    );
+
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+// ======================================
+// LOGOUT
+// ======================================
+
+function logoutUser() {
+
+    currentUser = null;
+
+    pets = [];
+
+    selectedPetIndex = null;
+
+
+    window.location.href =
+        "login.html";
+
 }

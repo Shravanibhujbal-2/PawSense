@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Soft Toys</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="toys.html" class="back-link">
+            ← Toys
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            🧸
+        </div>
+
+        <h1>Soft Toys</h1>
+
+        <p>
+            Choose a soft toy for your pet
+        </p>
+
+
+        <div class="shop-grid">
+
+
+            <!-- SOFT TEDDY -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🧸
+                </div>
+
+                <h2>
+                    Soft Teddy
+                </h2>
+
+                <p>
+                    Soft and comfortable toy
+                </p>
+
+                <h3>
+                    ₹199
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Soft Teddy')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Soft Teddy', 199)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- SQUEAKY SOFT TOY -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🐻
+                </div>
+
+                <h2>
+                    Squeaky Soft Toy
+                </h2>
+
+                <p>
+                    Soft toy with fun squeak
+                </p>
+
+                <h3>
+                    ₹249
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Squeaky Soft Toy')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Squeaky Soft Toy', 249)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PLUSH RABBIT -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🐰
+                </div>
+
+                <h2>
+                    Plush Rabbit Toy
+                </h2>
+
+                <p>
+                    Cute and soft plush toy
+                </p>
+
+                <h3>
+                    ₹299
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Plush Rabbit Toy')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Plush Rabbit Toy', 299)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <br><br>
+
+
+        <button
+            class="shop-button"
+            onclick="window.location.href='cart.html'">
+
+            🛒 View Cart
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function shopNow(productName) {
+
+            alert(
+                "You selected " +
+                productName +
+                " 🛍️"
+            );
+
+        }
+
+
+        function addToCart(productName, price) {
+
+            alert(
+                productName +
+                " added to cart! 🛒"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

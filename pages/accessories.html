@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Accessories</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="store.html" class="back-link">
+            ← Store
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            🦮
+        </div>
+
+        <h1>Pet Accessories</h1>
+
+        <p>
+            Choose accessories for your pet
+        </p>
+
+
+        <div class="shop-grid">
+
+
+            <!-- COLLAR -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🐕
+                </div>
+
+                <h2>
+                    Pet Collar
+                </h2>
+
+                <p>
+                    Comfortable collar for pets
+                </p>
+
+                <h3>
+                    ₹199
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Collar')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Collar', 199)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- LEASH -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🪢
+                </div>
+
+                <h2>
+                    Pet Leash
+                </h2>
+
+                <p>
+                    Strong leash for outdoor walks
+                </p>
+
+                <h3>
+                    ₹249
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Leash')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Leash', 249)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PET BOWL -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🥣
+                </div>
+
+                <h2>
+                    Pet Bowl
+                </h2>
+
+                <p>
+                    Food and water bowl for pets
+                </p>
+
+                <h3>
+                    ₹299
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Bowl')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Bowl', 299)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <br><br>
+
+
+        <button
+            class="shop-button"
+            onclick="window.location.href='cart.html'">
+
+            🛒 View Cart
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function shopNow(productName) {
+
+            alert(
+                "You selected " +
+                productName +
+                " 🛍️"
+            );
+
+        }
+
+
+        function addToCart(productName, price) {
+
+            alert(
+                productName +
+                " added to cart! 🛒"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

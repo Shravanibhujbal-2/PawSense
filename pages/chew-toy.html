@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Chew Toys</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="toys.html" class="back-link">
+            ← Toys
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            🦴
+        </div>
+
+        <h1>Chew Toys</h1>
+
+        <p>
+            Choose a chew toy for your pet
+        </p>
+
+
+        <div class="shop-grid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🦴
+                </div>
+
+                <h2>
+                    Rubber Chew Bone
+                </h2>
+
+                <p>
+                    Strong and safe chew toy
+                </p>
+
+                <h3>
+                    ₹199
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Rubber Chew Bone')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Rubber Chew Bone', 199)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🪢
+                </div>
+
+                <h2>
+                    Rope Chew Toy
+                </h2>
+
+                <p>
+                    Perfect for chewing and playing
+                </p>
+
+                <h3>
+                    ₹149
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Rope Chew Toy')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Rope Chew Toy', 149)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🦷
+                </div>
+
+                <h2>
+                    Dental Chew Toy
+                </h2>
+
+                <p>
+                    Helps maintain healthy teeth
+                </p>
+
+                <h3>
+                    ₹249
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Dental Chew Toy')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Dental Chew Toy', 249)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <br><br>
+
+
+        <button
+            class="shop-button"
+            onclick="window.location.href='cart.html'">
+
+            🛒 View Cart
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function shopNow(productName) {
+
+            alert(
+                "You selected " +
+                productName +
+                " 🛍️"
+            );
+
+        }
+
+
+        function addToCart(productName, price) {
+
+            alert(
+                productName +
+                " added to cart! 🛒"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

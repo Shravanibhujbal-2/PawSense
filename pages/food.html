@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawSense | Pet Food</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+
+        <div class="logo">
+            🐾 PawSense
+        </div>
+
+        <a href="store.html" class="back-link">
+            ← Store
+        </a>
+
+    </nav>
+
+
+    <div class="category-page">
+
+        <div class="category-big-icon">
+            🍖
+        </div>
+
+        <h1>Pet Food</h1>
+
+        <p>
+            Choose food for your pet
+        </p>
+
+
+        <div class="shop-grid">
+
+
+            <!-- DOG FOOD -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🐶
+                </div>
+
+                <h2>
+                    Dog Food
+                </h2>
+
+                <p>
+                    Healthy food for dogs
+                </p>
+
+                <h3>
+                    ₹399
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Dog Food')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Dog Food', 399)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- CAT FOOD -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🐱
+                </div>
+
+                <h2>
+                    Cat Food
+                </h2>
+
+                <p>
+                    Nutritious food for cats
+                </p>
+
+                <h3>
+                    ₹349
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Cat Food')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Cat Food', 349)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PET TREATS -->
+
+            <div class="shop-card">
+
+                <div class="shop-icon">
+                    🦴
+                </div>
+
+                <h2>
+                    Pet Treats
+                </h2>
+
+                <p>
+                    Tasty treats for your pets
+                </p>
+
+                <h3>
+                    ₹199
+                </h3>
+
+                <button
+                    class="shop-button"
+                    onclick="shopNow('Pet Treats')">
+
+                    🛍️ Shop Now
+
+                </button>
+
+                <br><br>
+
+                <button
+                    class="shop-button"
+                    onclick="addToCart('Pet Treats', 199)">
+
+                    🛒 Add to Cart
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <br><br>
+
+
+        <button
+            class="shop-button"
+            onclick="window.location.href='cart.html'">
+
+            🛒 View Cart
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function shopNow(productName) {
+
+            alert(
+                "You selected " +
+                productName +
+                " 🛍️"
+            );
+
+        }
+
+
+        function addToCart(productName, price) {
+
+            alert(
+                productName +
+                " added to cart! 🛒"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

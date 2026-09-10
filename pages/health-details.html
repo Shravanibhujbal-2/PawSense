@@ -10,7 +10,8 @@
 
     <title>PawSense | Health Details</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet"
+          href="../css/style.css">
 
 </head>
 
@@ -26,7 +27,8 @@
             🐾 PawSense
         </div>
 
-        <a href="health.html" class="back-link">
+        <a href="health.html"
+           class="back-link">
             ← Back
         </a>
 
@@ -50,107 +52,103 @@
     </section>
 
 
-    <!-- HEALTH FORM -->
+    <!-- SAVED DETAILS -->
 
-    <div class="health-form-box">
-
-        <form onsubmit="saveHealth(event)">
+    <div class="health-info-box">
 
 
-            <label>Weight (kg)</label>
+        <div class="health-info-card">
 
-            <input
-                type="number"
-                id="petWeight"
-                placeholder="Enter weight"
-                step="0.1"
-                min="0"
-                required>
+            <h2>🐾 Basic Information</h2>
 
+            <p>
+                <strong>Pet Name:</strong>
+                <span id="detailPetName">-</span>
+            </p>
 
-            <label>Height (cm)</label>
+            <p>
+                <strong>Pet Type:</strong>
+                <span id="detailPetType">-</span>
+            </p>
 
-            <input
-                type="number"
-                id="petHeight"
-                placeholder="Enter height"
-                step="0.1"
-                min="0"
-                required>
+            <p>
+                <strong>Age:</strong>
+                <span id="detailPetAge">-</span>
+            </p>
 
+            <p>
+                <strong>Gender:</strong>
+                <span id="detailPetGender">-</span>
+            </p>
 
-            <label>Temperature (°C)</label>
+            <p>
+                <strong>Breed:</strong>
+                <span id="detailPetBreed">-</span>
+            </p>
 
-            <input
-                type="number"
-                id="petTemperature"
-                placeholder="Enter temperature"
-                step="0.1"
-                min="0"
-                required>
-
-
-            <label>Health Status</label>
-
-            <select id="healthStatus" required>
-
-                <option value="">
-                    Select health status
-                </option>
-
-                <option value="Healthy">
-                    Healthy
-                </option>
-
-                <option value="Needs Attention">
-                    Needs Attention
-                </option>
-
-                <option value="Under Treatment">
-                    Under Treatment
-                </option>
-
-            </select>
+        </div>
 
 
-            <label>Diet</label>
 
-            <textarea
-                id="petDiet"
-                placeholder="Enter diet information"></textarea>
+        <div class="health-info-card">
+
+            <h2>❤️ Health Information</h2>
+
+            <p>
+                <strong>Weight:</strong>
+                <span id="detailWeight">-</span>
+            </p>
+
+            <p>
+                <strong>Height:</strong>
+                <span id="detailHeight">-</span>
+            </p>
+
+            <p>
+                <strong>Temperature:</strong>
+                <span id="detailTemperature">-</span>
+            </p>
+
+            <p>
+                <strong>Health Status:</strong>
+                <span id="detailHealthStatus">-</span>
+            </p>
+
+            <p>
+                <strong>Diet:</strong>
+                <span id="detailDiet">-</span>
+            </p>
+
+            <p>
+                <strong>Allergies:</strong>
+                <span id="detailAllergies">-</span>
+            </p>
+
+            <p>
+                <strong>Activity:</strong>
+                <span id="detailActivity">-</span>
+            </p>
+
+            <p>
+                <strong>Symptoms / Notes:</strong>
+                <span id="detailSymptoms">-</span>
+            </p>
+
+        </div>
 
 
-            <label>Allergies</label>
 
-            <textarea
-                id="petAllergies"
-                placeholder="Mention any allergies"></textarea>
+        <!-- SHARE BUTTON -->
 
+        <button
+            type="button"
+            class="save-health-btn"
+            onclick="shareWithDoctor()">
 
-            <label>Activity</label>
+            👨‍⚕️ Share Details with Doctor →
 
-            <textarea
-                id="petActivity"
-                placeholder="Describe daily activity"></textarea>
+        </button>
 
-
-            <label>Symptoms / Notes</label>
-
-            <textarea
-                id="petSymptoms"
-                placeholder="Enter symptoms or additional notes"></textarea>
-
-
-            <button
-                type="submit"
-                class="save-health-btn">
-
-                ❤️ Save Health Details →
-
-            </button>
-
-
-        </form>
 
     </div>
 
