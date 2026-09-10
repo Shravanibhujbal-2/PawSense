@@ -3,14 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PawSense | Vaccination</title>
 
-    <link rel="stylesheet"
-          href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -21,8 +18,7 @@
         🐾 PawSense
     </div>
 
-    <a href="pet-dashboard.html"
-       class="back-link">
+    <a href="pet-dashboard.html" class="back-link">
         ← Back
     </a>
 
@@ -37,25 +33,91 @@
 
     <h1>Vaccination</h1>
 
-    <p>Keep your pet's vaccination records safe.</p>
+    <p>
+        Add and manage your pet's vaccination details
+    </p>
 
+
+    <!-- ADD VACCINATION -->
 
     <div class="info-card">
 
-        <h2>Vaccination Details</h2>
+        <h2>💉 Add Vaccination Details</h2>
 
-        <input type="text"
-               placeholder="Vaccine name">
+        <form onsubmit="addVaccination(event)">
 
-        <input type="date">
+            <label>Vaccine Name</label>
 
-        <button class="save-pet-btn">
-            Save Vaccination
-        </button>
+            <input
+                type="text"
+                id="vaccineName"
+                placeholder="e.g. Rabies Vaccine"
+                required
+            >
+
+
+            <label>Vaccination Date</label>
+
+            <input
+                type="date"
+                id="vaccinationDate"
+                required
+            >
+
+
+            <label>Next Due Date</label>
+
+            <input
+                type="date"
+                id="nextDueDate"
+                required
+            >
+
+
+            <label>Veterinarian Name</label>
+
+            <input
+                type="text"
+                id="vaccineDoctor"
+                placeholder="e.g. Dr. Amit"
+            >
+
+
+            <button
+                type="submit"
+                class="save-pet-btn">
+
+                💉 Add Vaccination
+
+            </button>
+
+        </form>
 
     </div>
 
+
+    <!-- VACCINATION RECORDS -->
+
+    <div class="info-card">
+
+        <h2>📋 Vaccination Records</h2>
+
+        <div id="vaccinationList">
+
+            <p>
+                No vaccination records added yet.
+            </p>
+
+        </div>
+
+    </div>
+
+
 </div>
 
+
+<script src="../js/script.js"></script>
+
 </body>
+
 </html>

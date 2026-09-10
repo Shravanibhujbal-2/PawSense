@@ -2,17 +2,12 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PawSense | My Pet's Medicines</title>
 
-    <link rel="stylesheet"
-          href="../css/style.css">
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -23,8 +18,7 @@
         🐾 PawSense
     </div>
 
-    <a href="pet-dashboard.html"
-       class="back-link">
+    <a href="pet-dashboard.html" class="back-link">
         ← Back
     </a>
 
@@ -40,29 +34,106 @@
     <h1>My Pet's Medicines</h1>
 
     <p>
-        Manage medicines prescribed by your veterinarian.
+        Add and manage your pet's medicines
     </p>
 
 
+    <!-- ADD MEDICINE -->
+
     <div class="info-card">
 
-        <h2>Medicine Details</h2>
+        <h2>💊 Add Medicine Details</h2>
 
-        <input type="text"
-               placeholder="Medicine name">
+        <form onsubmit="addMedicine(event)">
 
-        <input type="text"
-               placeholder="Dosage">
+            <label>Medicine Name</label>
 
-        <input type="date">
+            <input
+                type="text"
+                id="medicineName"
+                placeholder="e.g. Amoxicillin"
+                required
+            >
 
-        <button class="save-pet-btn">
-            Save Medicine
-        </button>
+
+            <label>Purpose</label>
+
+            <input
+                type="text"
+                id="medicinePurpose"
+                placeholder="e.g. Infection treatment"
+            >
+
+
+            <label>Dosage</label>
+
+            <input
+                type="text"
+                id="medicineDosage"
+                placeholder="e.g. 5 ml"
+            >
+
+
+            <label>Frequency</label>
+
+            <input
+                type="text"
+                id="medicineFrequency"
+                placeholder="e.g. Twice a day"
+            >
+
+
+            <label>Start Date</label>
+
+            <input
+                type="date"
+                id="medicineStartDate"
+            >
+
+
+            <label>Doctor's Name</label>
+
+            <input
+                type="text"
+                id="medicineDoctor"
+                placeholder="e.g. Dr. Amit"
+            >
+
+
+            <button
+                type="submit"
+                class="save-pet-btn">
+
+                💊 Add Medicine
+
+            </button>
+
+        </form>
 
     </div>
 
+
+    <!-- MEDICINE RECORDS -->
+
+    <div class="info-card">
+
+        <h2>📋 Medicine Records</h2>
+
+        <div id="medicineList">
+
+            <p>
+                No medicines added yet.
+            </p>
+
+        </div>
+
+    </div>
+
+
 </div>
+
+
+<script src="../js/script.js"></script>
 
 </body>
 

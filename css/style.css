@@ -2658,3 +2658,270 @@ footer p {
     }
 
 }
+/* =========================
+   VACCINATION PAGE
+   ========================= */
+
+.vaccine-item,
+.medicine-item,
+.doctor-card {
+    background: #fff8f5;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+    border: 1px solid #f1ddd5;
+}
+
+.vaccine-item h3,
+.medicine-item h3,
+.doctor-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.vaccine-item p,
+.medicine-item p,
+.doctor-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   DOCTOR CARD
+   ========================= */
+
+.doctor-card {
+    text-align: left;
+}
+
+.doctor-card .view-health-btn {
+    margin-top: 10px;
+}
+/* =========================
+   COMPACT VACCINATION FORM
+   ========================= */
+
+.info-card form {
+    max-width: 650px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+
+    text-align: left;
+}
+
+.info-card form label {
+    display: block;
+
+    width: fit-content;
+
+    padding: 5px 10px;
+    margin-bottom: 6px;
+
+    border-radius: 7px;
+
+    background: #fff0ea;
+    color: #c76543;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.info-card form input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    border: 1px solid #e4c9bd;
+    border-radius: 9px;
+
+    background: #fff;
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+.info-card form input:focus {
+    border-color: #d87955;
+}
+
+.info-card form .save-pet-btn {
+    grid-column: 1 / -1;
+
+    width: 200px;
+    justify-self: center;
+
+    padding: 11px 18px;
+    margin-top: 5px;
+
+    border-radius: 10px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .info-card form {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .info-card form .save-pet-btn {
+        width: 100%;
+    }
+
+}
+/* Vaccination form heading */
+
+.info-card h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+/* =========================
+   MEDICINE FORM
+   ========================= */
+
+.info-card form {
+    max-width: 650px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+
+    text-align: left;
+}
+
+.info-card form label {
+    display: block;
+    width: fit-content;
+
+    padding: 5px 10px;
+    margin-bottom: 6px;
+
+    border-radius: 7px;
+
+    background: #fff0ea;
+    color: #c76543;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.info-card form input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    border: 1px solid #e4c9bd;
+    border-radius: 9px;
+
+    background: #fff;
+
+    font-size: 13px;
+    outline: none;
+}
+
+.info-card form input:focus {
+    border-color: #d87955;
+}
+
+.info-card form .save-pet-btn {
+    grid-column: 1 / -1;
+
+    width: 200px;
+    justify-self: center;
+
+    padding: 11px 18px;
+    margin-top: 5px;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   MEDICINE RECORD
+   ========================= */
+
+.medicine-item {
+    background: #fff8f5;
+    border: 1px solid #ead8d0;
+
+    padding: 18px;
+    margin: 15px 0;
+
+    border-radius: 14px;
+}
+
+.medicine-item h3 {
+    margin-top: 0;
+    color: #c76543;
+}
+
+.medicine-item p {
+    color: #666;
+    margin: 7px 0;
+}
+
+
+/* =========================
+   DOCTOR CARDS
+   ========================= */
+
+.doctor-card {
+    background: #fff8f5;
+    border: 1px solid #ead8d0;
+
+    padding: 20px;
+    margin: 15px 0;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.doctor-card h3 {
+    margin-top: 0;
+    color: #c76543;
+}
+
+.doctor-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.doctor-card .view-health-btn {
+    margin-top: 8px;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .info-card form {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .info-card form .save-pet-btn {
+        width: 100%;
+    }
+
+}
